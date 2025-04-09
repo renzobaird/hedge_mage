@@ -9,13 +9,13 @@ C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker13
+AssetImportWorker0
 -projectPath
 C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
 -logFile
-Logs/AssetImportWorker13.log
+Logs/AssetImportWorker0.log
 -srvPort
-58782
+62142
 -job-worker-count
 9
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [37320]  Target information:
+Player connection [32592]  Target information:
 
-Player connection [37320]  * "[IP] 192.168.68.93 [Port] 0 [Flags] 2 [Guid] 4248453650 [EditorId] 4248453650 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [32592]  * "[IP] 192.168.68.93 [Port] 0 [Flags] 2 [Guid] 1861358325 [EditorId] 1861358325 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [37320] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [37320] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [32592] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [32592] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 3.87 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 3.74 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,19 +92,19 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56984
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004855 seconds.
-- Loaded All Assemblies, in  0.379 seconds
+Registered in 0.005703 seconds.
+- Loaded All Assemblies, in  0.395 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.320 seconds
-Domain Reload Profiling: 696ms
-	BeginReloadAssembly (137ms)
+- Finished resetting the current domain, in  0.349 seconds
+Domain Reload Profiling: 741ms
+	BeginReloadAssembly (138ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
@@ -112,25 +112,25 @@ Domain Reload Profiling: 696ms
 		CreateAndSetChildDomain (1ms)
 	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (50ms)
-	LoadAllAssembliesAndSetupDomain (144ms)
-		LoadAssemblies (132ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (157ms)
+		LoadAssemblies (136ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (141ms)
-			TypeCache.Refresh (140ms)
-				TypeCache.ScanAssembly (128ms)
+		AnalyzeDomain (153ms)
+			TypeCache.Refresh (151ms)
+				TypeCache.ScanAssembly (136ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (321ms)
+	FinalizeReload (349ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (282ms)
+		SetupLoadedEditorAssemblies (319ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
+			InitializePlatformSupportModulesInManaged (27ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (50ms)
-			ProcessInitializeOnLoadAttributes (149ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
+			BeforeProcessingInitializeOnLoad (52ms)
+			ProcessInitializeOnLoadAttributes (177ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -139,85 +139,97 @@ Domain Reload Profiling: 696ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.725 seconds
+- Loaded All Assemblies, in  0.824 seconds
 Refreshing native plugins compatible for Editor in 1.51 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.725 seconds
-Domain Reload Profiling: 1445ms
-	BeginReloadAssembly (143ms)
+- Finished resetting the current domain, in  0.805 seconds
+Domain Reload Profiling: 1624ms
+	BeginReloadAssembly (164ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (23ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (35ms)
-	LoadAllAssembliesAndSetupDomain (499ms)
-		LoadAssemblies (348ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (566ms)
+		LoadAssemblies (412ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (238ms)
-			TypeCache.Refresh (173ms)
-				TypeCache.ScanAssembly (159ms)
-			BuildScriptInfoCaches (50ms)
+		AnalyzeDomain (258ms)
+			TypeCache.Refresh (190ms)
+				TypeCache.ScanAssembly (171ms)
+			BuildScriptInfoCaches (52ms)
 			ResolveRequiredComponents (11ms)
-	FinalizeReload (726ms)
+	FinalizeReload (806ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (596ms)
+		SetupLoadedEditorAssemblies (668ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (109ms)
-			ProcessInitializeOnLoadAttributes (369ms)
-			ProcessInitializeOnLoadMethodAttributes (104ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (126ms)
+			ProcessInitializeOnLoadAttributes (405ms)
+			ProcessInitializeOnLoadMethodAttributes (120ms)
+			AfterProcessingInitializeOnLoad (9ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 3.10 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 3.11 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6588 unused Assets / (5.1 MB). Loaded Objects now: 7303.
-Memory consumption went from 186.7 MB to 181.6 MB.
-Total: 14.883000 ms (FindLiveObjects: 1.104900 ms CreateObjectMapping: 0.552800 ms MarkObjects: 9.040400 ms  DeleteObjects: 4.183200 ms)
+Unloading 6588 unused Assets / (4.0 MB). Loaded Objects now: 7303.
+Memory consumption went from 177.0 MB to 172.9 MB.
+Total: 6.303100 ms (FindLiveObjects: 0.438900 ms CreateObjectMapping: 0.322700 ms MarkObjects: 4.012500 ms  DeleteObjects: 1.528200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 461896.364491 seconds.
-  path: Assets/Assets/Sprites/Tiles & Shapes/HEDGES_PIC_80.asset
-  artifactKey: Guid(a63946596df196f459a937a2bede0f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Sprites/Tiles & Shapes/HEDGES_PIC_80.asset using Guid(a63946596df196f459a937a2bede0f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ecbc4f046bfe18a410fd024ab9dd6b3') in 0.0830726 seconds
+  Time since last request: 43568.191691 seconds.
+  path: Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2.png
+  artifactKey: Guid(394d3b7e8330ed041a4e3f16b760a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2.png using Guid(394d3b7e8330ed041a4e3f16b760a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e7e5fab2b93138a0bbbe0cac9838bed') in 0.1006714 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.606480 seconds.
+  path: Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2.png
+  artifactKey: Guid(394d3b7e8330ed041a4e3f16b760a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2.png using Guid(394d3b7e8330ed041a4e3f16b760a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '087c4e73a123e5d4ff7c75d6f85bab62') in 0.0228216 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.498101 seconds.
+  path: Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2.png
+  artifactKey: Guid(394d3b7e8330ed041a4e3f16b760a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2.png using Guid(394d3b7e8330ed041a4e3f16b760a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '032ca2baf6eaa1ec1d4160fd1d675155') in 0.0507523 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.313290 seconds.
+  path: Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2_0.asset
+  artifactKey: Guid(39c4a9cb23d15b0459f84666a3fa06d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2_0.asset using Guid(39c4a9cb23d15b0459f84666a3fa06d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f2e0f049b7a1f8bb3ff2d38117768ef5') in 0.0169083 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Assets/Sprites/Tiles & Shapes/HEDGES_PIC_85.asset
-  artifactKey: Guid(e0d127acebc646f4ba64bc053dfa0aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Sprites/Tiles & Shapes/HEDGES_PIC_85.asset using Guid(e0d127acebc646f4ba64bc053dfa0aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de89677abf33ca2bcdd2794515f4d560') in 0.01169 seconds
+  Time since last request: 0.000017 seconds.
+  path: Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2_3.asset
+  artifactKey: Guid(50507d35ddbb9324bae5b05e1e529750) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2_3.asset using Guid(50507d35ddbb9324bae5b05e1e529750) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1eb0b1fa436c6826a9e889b704298a05') in 0.011134 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Assets/Sprites/Tiles & Shapes/HEDGES_PIC_98.asset
-  artifactKey: Guid(04acc3b9f3ebb2e49b7dbc2844bf4289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Sprites/Tiles & Shapes/HEDGES_PIC_98.asset using Guid(04acc3b9f3ebb2e49b7dbc2844bf4289) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2251a64960bce8019aa5d83558771b60') in 0.0081258 seconds
+  Time since last request: 0.000016 seconds.
+  path: Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2_2.asset
+  artifactKey: Guid(77a14b7a73d5e0841822f9c64541a579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Sprites/Tiles & Shapes/hedge_unique2_2.asset using Guid(77a14b7a73d5e0841822f9c64541a579) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fde94d45ebf8800765361d4a3c034a6c') in 0.0074017 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Assets/Sprites/Tiles & Shapes/New Tile Palette.prefab
-  artifactKey: Guid(fe5fc64a285820a42b06f392708bbec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Sprites/Tiles & Shapes/New Tile Palette.prefab using Guid(fe5fc64a285820a42b06f392708bbec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '879cb18baaa819c3d3ffede39eef53d9') in 0.4668697 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 209
-
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
