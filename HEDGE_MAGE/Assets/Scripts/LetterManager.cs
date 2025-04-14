@@ -1,35 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class LetterManager : MonoBehaviour
 {
-    public string[] wordList = { 
-        "Doomcry",
-        "Nighthex",
-        "Soulrot",
-        "Bloodweb",
-        "Darkrune",
-        "Gravekin",
-        "Fearsong",
-        "Voidmaw",
-        "Bonecurse",
-        "Shadewing",
-        "Wraithfire",
-        "Cryptborn",
-        "Spellbane",
-        "Gloommark",
-        "Dreamrot",
-        "Wyrdseed",
-        "Hellbloom",
-        "Fleshbind",
-        "Starcurse",
-        "Ironghast",
-        "Abyssmist",
-        "Eldritchcry",
-        "Voidforge",
-        "Necrochant",
-        "Blightward"
-    };
+    public string[] wordList = { "apple", "train", "cloud", "brick", "mouse" };
     public GameObject letterPrefab;
     public List<Transform> spawnPoints;
     public int numberOfDecoys = 5;
