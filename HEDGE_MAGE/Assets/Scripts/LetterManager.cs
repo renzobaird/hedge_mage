@@ -53,7 +53,7 @@ public class LetterManager : MonoBehaviour
     Debug.Log("Selected Word: " + selectedWord); // add this
     if (wordDisplayText != null)
     {
-        wordDisplayText.text = "Find: " + selectedWord.ToUpper();
+        wordDisplayText.text = " " + selectedWord.ToUpper();
     }
     else
     {
