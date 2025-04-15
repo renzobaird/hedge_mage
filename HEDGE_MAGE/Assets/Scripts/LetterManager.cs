@@ -9,13 +9,17 @@ public class LetterManager : MonoBehaviour
     public List<Transform> spawnPoints;
     public int numberOfDecoys = 5;
 
+    public TextMeshProUGUI wordDisplayText; // UI Text to display the selected word
+
     private string selectedWord;
 
     void Start()
     {
+        // Choose a random word
         selectedWord = wordList[Random.Range(0, wordList.Length)];
-        char[] letters = selectedWord.ToCharArray();
+        DisplaySelectedWord(); // Display it on screen
 
+        char[] letters = selectedWord.ToCharArray();
         List<Transform> availableSpots = new List<Transform>(spawnPoints);
 
         // Spawn correct letters
@@ -44,4 +48,17 @@ public class LetterManager : MonoBehaviour
             obj.GetComponent<LetterObject>().SetLetter(randomLetter);
         }
     }
+
+    void DisplaySelectedWord() {
+    Debug.Log("Selected Word: " + selectedWord); // add this
+    if (wordDisplayText != null)
+    {
+        wordDisplayText.text = "Find: " + selectedWord.ToUpper();
+    }
+    else
+    {
+        Debug.LogWarning("Word Display Text is not assigned in the inspector.");
+    }
+    }
+
 }
