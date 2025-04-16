@@ -17,7 +17,7 @@ TagManager:
   - Obstacle
   - Node
   - Background
-  - 
+  - EnemyIgnoreBush
   - 
   - 
   - 
@@ -50,7 +50,7 @@ TagManager:
   - name: Background
     uniqueID: 3556464591
     locked: 0
-  - name: 4
+  - name: EnemyIgnoreBush
     uniqueID: 891104247
     locked: 0
   m_RenderingLayers:

@@ -41,7 +41,7 @@ public abstract class BaseCreature : MonoBehaviour
                 movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
         }
 
-        rb.velocity = movement * moveSpeed;
+        rb.linearVelocity = movement * moveSpeed;
     }
 
     public abstract void OnPlayerCollision(GameObject player);
