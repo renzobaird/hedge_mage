@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - KillZone
   layers:
   - Default
   - TransparentFX
@@ -43,6 +45,9 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 3247192429
+    locked: 0
+  - name: Creature
+    uniqueID: 1285006499
     locked: 0
   - name: Obstacle
     uniqueID: 337677623
