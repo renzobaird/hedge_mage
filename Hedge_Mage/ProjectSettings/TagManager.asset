@@ -46,6 +46,9 @@ TagManager:
   - name: Character
     uniqueID: 3247192429
     locked: 0
+  - name: Letter
+    uniqueID: 2141910193
+    locked: 0
   - name: Creature
     uniqueID: 1285006499
     locked: 0

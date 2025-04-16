@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 23453372069422896}
   - component: {fileID: 3527841952071901711}
   - component: {fileID: 8262771937604974606}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,15 +27,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2817857534990605158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 85.47808, y: 27.780375, z: 27.780375}
+  m_LocalPosition: {x: 0, y: 0, z: -0.015859397}
+  m_LocalScale: {x: 1.7954999, y: 1.7955, z: 1.7955}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2673595638036516108}
+  m_Children:
+  - {fileID: 2673595638036516108}
+  m_Father: {fileID: 7430406328124286564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 7747.386, y: 1221.9706}
+  m_AnchoredPosition: {x: 151.07959, y: 77.51453}
   m_SizeDelta: {x: 1101, y: 505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &23453372069422896
@@ -112,7 +113,7 @@ GameObject:
   - component: {fileID: 7430406328124286564}
   - component: {fileID: 4836216462219996412}
   - component: {fileID: 2906052388471133864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Letter2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,11 +129,11 @@ Transform:
   m_GameObject: {fileID: 3517851501272080384}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 470.59103, y: 209.2611, z: 0.015859397}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 470.42, y: 209.2611, z: 0.015859397}
+  m_LocalScale: {x: 0.75959, y: 0.75959, z: 0.75959}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2673595638036516108}
+  - {fileID: 5749170583781042134}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4836216462219996412
@@ -176,8 +177,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2141910193
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -202,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5b178eb859beb4085a09183fe43e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letter: 0
-  textMesh: {fileID: 0}
+  letter: 92
+  textMesh: {fileID: 8071835825303950283}
 --- !u!1 &4018768814115021305
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ GameObject:
   - component: {fileID: 2673595638036516108}
   - component: {fileID: 6749426047806592222}
   - component: {fileID: 8071835825303950283}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,16 +231,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4018768814115021305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.015859397}
-  m_LocalScale: {x: 0.011698905, y: 0.035996635, z: 0.035996635}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.011698907, y: 0.03599664, z: 0.03599664}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5749170583781042134}
-  m_Father: {fileID: 7430406328124286564}
+  m_Children: []
+  m_Father: {fileID: 5749170583781042134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.41869473, y: 0.4146673}
   m_AnchorMax: {x: 0.41869473, y: 0.4146673}
-  m_AnchoredPosition: {x: -9.558151, y: 0.1519928}
+  m_AnchoredPosition: {x: 0.050239563, y: 0.0061035156}
   m_SizeDelta: {x: 199.81708, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6749426047806592222
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '" "'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
