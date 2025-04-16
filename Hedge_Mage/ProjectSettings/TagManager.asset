@@ -16,7 +16,7 @@ TagManager:
   - Letter
   - Obstacle
   - Node
-  - 
+  - Background
   - 
   - 
   - 
@@ -41,14 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 1
-    uniqueID: 3556464591
+  - name: Character
+    uniqueID: 3247192429
     locked: 0
-  - name: 2
+  - name: Obstacle
     uniqueID: 337677623
     locked: 0
-  - name: 3
-    uniqueID: 3247192429
+  - name: Background
+    uniqueID: 3556464591
     locked: 0
   - name: 4
     uniqueID: 891104247
