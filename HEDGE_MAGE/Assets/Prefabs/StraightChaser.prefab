@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3703327530222693161}
   - component: {fileID: 163392089608390776}
   - component: {fileID: 8151791057037428648}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StraightChaser
   m_TagString: KillZone
   m_Icon: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1285006499
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6287787046888575383, guid: f249bb54aaac6c1409a8b5c6b6726588, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -167,7 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRange: 5
   moveSpeed: 2
+  damage: 25
   maxLifeDuration: -1
   speedMultiplier: 2
-  damage: 1
-  hitsToKill: 3

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class PlayerHealth : MonoBehaviour
     public Transform spawnPoint;
 
     [Header("UI References")]
-    public Text livesText; 
-    public Text healthText; // New UI element for health
+    public TMP_Text livesText;
+    public TMP_Text healthText;
 
     private int currentLives;
     private int currentHealth;
@@ -28,21 +29,24 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        if (IsAlive())
-        {
-            currentHealth -= damageAmount;
-            Debug.Log($"Player took {damageAmount} damage. Current Health: {currentHealth}", this);
-            UpdateUI();
+        if (!IsAlive()) return;
 
-            if (currentHealth <= 0)
-            {
-                LoseLife();
-            }
+        currentHealth -= damageAmount;
+        currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
+        Debug.Log($"Player took {damageAmount} damage. Current Health: {currentHealth}", this);
+
+        UpdateUI();
+
+        if (currentHealth <= 0)
+        {
+            LoseLife();
         }
     }
 
     void LoseLife()
     {
+        if (!IsAlive()) return;
+
         currentLives--;
         Debug.Log($"Player lost a life! Lives left: {currentLives}", this);
 
@@ -54,6 +58,8 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
+
+        UpdateUI();
     }
 
     void Die()
@@ -83,10 +89,14 @@ public class PlayerHealth : MonoBehaviour
     void UpdateUI()
     {
         if (livesText != null)
-            livesText.text = "Lives: " + currentLives.ToString();
+        {
+            livesText.text = $"Lives: {currentLives}";
+        }
 
         if (healthText != null)
-            healthText.text = "Health: " + currentHealth.ToString();
+        {
+            healthText.text = $"Health: {currentHealth}";
+        }
     }
 
     void SetInitialSpawnPoint()
@@ -96,10 +106,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("KillZone"))
+        if (other.CompareTag("KillZone"))
         {
             Debug.Log("Player entered KillZone.", this);
             currentHealth = 0;
+            UpdateUI();
             LoseLife();
         }
     }
