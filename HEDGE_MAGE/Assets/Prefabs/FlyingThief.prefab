@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5284783552600935364}
   m_Layer: 7
   m_Name: FlyingThief
-  m_TagString: KillZone
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRange: 4
   moveSpeed: 2
+  damage: 1
   maxLifeDuration: -1
   dropDistance: 5
 --- !u!212 &5284783552600935364

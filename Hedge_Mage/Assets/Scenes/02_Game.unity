@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &263878319
 Transform:
   m_ObjectHideFlags: 0
@@ -9965,7 +9965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1073944930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10360,7 +10360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   maxHealth: 100
-  respawnDelay: 2
+  respawnDelay: 3
   spawnPoint: {fileID: 558213954}
   livesText: {fileID: 771768683}
   healthText: {fileID: 517349374}

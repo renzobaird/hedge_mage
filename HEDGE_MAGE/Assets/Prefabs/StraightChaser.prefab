@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8151791057037428648}
   m_Layer: 7
   m_Name: StraightChaser
-  m_TagString: KillZone
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

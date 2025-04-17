@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class BushAmbusher : BaseCreature
 {
-    public int damage = 1; // Damage specific to the BushAmbusher
-    public int hitsToKill = 2;
+    public int hitsToKill = 10;
     private int currentHits = 0;
 
     protected override void Start()
     {
         base.Start();
-        // Can move through bushes (custom collision settings)
+        damage = 1; // ✅ Set the inherited damage field from BaseCreature
         gameObject.layer = LayerMask.NameToLayer("EnemyIgnoreBush");
     }
 
@@ -19,8 +18,8 @@ public class BushAmbusher : BaseCreature
         if (currentHits >= hitsToKill)
         {
             Debug.Log("Player killed by Bush Ambusher!");
-            // You'll likely want to add logic here to actually damage the player
-            // For example: player.GetComponent<PlayerHealth>()?.TakeDamage(damage);
+            // Example logic to damage player
+            player.GetComponent<PlayerHealth>()?.TakeDamage(damage);
         }
     }
 }

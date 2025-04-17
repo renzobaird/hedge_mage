@@ -7,8 +7,12 @@ public abstract class BaseCreature : MonoBehaviour
     public float detectionRange = 5f;
     public float moveSpeed = 2f;
 
-    [Header("Combat")]
-    public int damage = 1; // Damage this creature deals on contact
+    [Header("Combat Settings")]
+    [SerializeField] protected int damage = 25;
+
+    public int Damage => damage; // Optional public getter if you need to read it elsewhere
+
+
 
     [Header("Lifetime")]
     public float maxLifeDuration = -1f; // -1 means live forever
@@ -120,8 +124,10 @@ public abstract class BaseCreature : MonoBehaviour
         }
     }
 
-    // This abstract method is no longer strictly needed for damage,
-    // but keep it if you plan other unique collision effects per creature type.
-    // If not needed, you can remove it from BaseCreature and StraightChaser.
-     public abstract void OnPlayerCollision(GameObject player);
+    
+    public virtual void OnPlayerCollision(GameObject player)
+    {
+        Debug.Log($"{this.name} hit player for {damage} damage.");
+        player.GetComponent<PlayerHealth>()?.TakeDamage(damage);
+    }
 }

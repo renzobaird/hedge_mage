@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public float respawnDelay = 2f;
     public Transform spawnPoint;
+    private float killZoneImmunityTime = 0.8f;
+    private float lastDamageTime = -1f;
+
 
     [Header("UI References")]
     public TMP_Text livesText;
@@ -27,14 +30,16 @@ public class PlayerHealth : MonoBehaviour
         UpdateUI();
     }
 
-    public void TakeDamage(int damageAmount)
+
+    public void TakeDamage(int damageTaken)
     {
         if (!IsAlive()) return;
 
-        currentHealth -= damageAmount;
-        currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
-        Debug.Log($"Player took {damageAmount} damage. Current Health: {currentHealth}", this);
+        currentHealth -= damageTaken;
+        currentHealth = Mathf.Max(currentHealth, 0);
+        lastDamageTime = Time.time; // Track when damage was taken
 
+        Debug.Log($"Player took {damageTaken} damage. Current Health: {currentHealth}", this);
         UpdateUI();
 
         if (currentHealth <= 0)
@@ -42,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
             LoseLife();
         }
     }
+
 
     void LoseLife()
     {
@@ -108,10 +114,18 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("KillZone"))
         {
+            // Prevent accidental kill if player was just hit
+            if (Time.time - lastDamageTime < killZoneImmunityTime)
+            {
+                Debug.Log("KillZone ignored due to recent damage.");
+                return;
+            }
+
             Debug.Log("Player entered KillZone.", this);
             currentHealth = 0;
             UpdateUI();
             LoseLife();
         }
     }
+
 }
