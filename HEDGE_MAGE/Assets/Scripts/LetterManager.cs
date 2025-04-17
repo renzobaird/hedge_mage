@@ -21,6 +21,12 @@ public class LetterManager : MonoBehaviour
         selectedWord = wordList[Random.Range(0, wordList.Length)];
         DisplaySelectedWord();
 
+        selectedWord = wordList[Random.Range(0, wordList.Length)];
+        DisplaySelectedWord();
+
+        // Tell the WordProgressManager
+        FindFirstObjectByType<WordProgressManager>().SetWord(selectedWord);
+
         // Store letters for use by other scripts if needed
         letters = new List<char>(selectedWord.ToCharArray());
 

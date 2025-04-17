@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BushAmbusher : BaseCreature
 {
-    public int damage = 1;
+    public int damage = 1; // Damage specific to the BushAmbusher
     public int hitsToKill = 2;
     private int currentHits = 0;
 
@@ -19,6 +19,8 @@ public class BushAmbusher : BaseCreature
         if (currentHits >= hitsToKill)
         {
             Debug.Log("Player killed by Bush Ambusher!");
+            // You'll likely want to add logic here to actually damage the player
+            // For example: player.GetComponent<PlayerHealth>()?.TakeDamage(damage);
         }
     }
 }
