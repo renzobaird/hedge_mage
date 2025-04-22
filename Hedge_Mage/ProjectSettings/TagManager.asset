@@ -16,7 +16,7 @@ TagManager:
   - Character
   - Creature
   - Letter
-  - Obstacle
+  - Obstacles
   - Node
   - Background
   - EnemyIgnoreBush
@@ -52,7 +52,7 @@ TagManager:
   - name: Creature
     uniqueID: 1285006499
     locked: 0
-  - name: Obstacle
+  - name: Obstacles
     uniqueID: 337677623
     locked: 0
   - name: Background

@@ -55,7 +55,7 @@ public abstract class BaseCreature : MonoBehaviour
         if (player == null)
         {
              // Optionally stop moving if player disappears
-             if (rb != null) rb.velocity = Vector2.zero;
+             if (rb != null) rb.linearVelocity = Vector2.zero;
              return;
         }
 
@@ -93,7 +93,7 @@ public abstract class BaseCreature : MonoBehaviour
     {
         if (rb != null)
         {
-            rb.velocity = movement * moveSpeed;
+            rb.linearVelocity = movement * moveSpeed;
         }
     }
 

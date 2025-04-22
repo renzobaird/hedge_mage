@@ -169,8 +169,5 @@ MonoBehaviour:
   moveSpeed: 2
   damage: 25
   maxLifeDuration: -1
-  speedMultiplier: 2
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  obstacleDetectionDistance: 0.5
+  repathRate: 0.7
+  nodeReachThreshold: 0.2

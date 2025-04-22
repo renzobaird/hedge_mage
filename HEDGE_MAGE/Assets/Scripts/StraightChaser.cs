@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class StraightChaser : BaseCreature
 {
     [Header("StraightChaser Pathfinding")]
-    public float repathRate = 0.5f;
+    public float repathRate = 0.7f;
     public float nodeReachThreshold = 0.2f;
 
     private float lastPathTime;
@@ -16,7 +16,8 @@ public class StraightChaser : BaseCreature
     {
         base.Start();
         damage = 25;
-        pathfinder = FindFirstObjectByType<AStarGridManager>(); // Fixed the obsolete warning
+        pathfinder = FindFirstObjectByType<AStarGridManager>();
+
         if (pathfinder == null)
         {
             Debug.LogError("No AStarGridManager found in scene!");
@@ -92,7 +93,7 @@ public class StraightChaser : BaseCreature
     {
         if (rb != null)
         {
-            rb.velocity = movement * moveSpeed;;
+            rb.linearVelocity = movement * moveSpeed;
         }
     }
 
