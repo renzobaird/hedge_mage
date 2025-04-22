@@ -170,3 +170,7 @@ MonoBehaviour:
   damage: 25
   maxLifeDuration: -1
   speedMultiplier: 2
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  obstacleDetectionDistance: 0.5

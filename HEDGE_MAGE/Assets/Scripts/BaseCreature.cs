@@ -55,7 +55,7 @@ public abstract class BaseCreature : MonoBehaviour
         if (player == null)
         {
              // Optionally stop moving if player disappears
-             if (rb != null) rb.linearVelocity = Vector2.zero;
+             if (rb != null) rb.velocity = Vector2.zero;
              return;
         }
 
@@ -88,13 +88,17 @@ public abstract class BaseCreature : MonoBehaviour
         // movement = Vector2.zero; // Uncomment if you want idle behaviour instead of wander
     }
 
+
     protected virtual void ApplyMovement()
     {
-         if (rb != null)
-         {
-            rb.linearVelocity = movement * moveSpeed; // Use velocity for physics-based movement
-         }
+        if (rb != null)
+        {
+            rb.velocity = movement * moveSpeed;
+        }
     }
+
+
+
 
     // --- ADDED: TRIGGER DETECTION FOR DAMAGE ---
     // This method is called by Unity's 2D Physics engine
