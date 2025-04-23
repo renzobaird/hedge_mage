@@ -1,104 +1,149 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class StraightChaser : BaseCreature
 {
-    [Header("StraightChaser Pathfinding")]
-    public float repathRate = 0.7f;
-    public float nodeReachThreshold = 0.2f;
+    private Vector2 lastValidDirection;
+    private float damageCooldown = 1.5f;
+    private float lastDamageTime = -Mathf.Infinity;
 
-    private float lastPathTime;
-    private Queue<Vector3> currentPath = new Queue<Vector3>();
-
-    private AStarGridManager pathfinder;
+    // Add a variable to cache the PlayerHealth component
+    private PlayerHealth playerHealth;
 
     protected override void Start()
     {
         base.Start();
-        damage = 25;
-        pathfinder = FindFirstObjectByType<AStarGridManager>();
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
+        if (rb == null) Debug.LogError("StraightChaser: Rigidbody2D not found!");
 
-        if (pathfinder == null)
+        movement = GetRandomDirection();
+        lastValidDirection = movement;
+        lastDamageTime = -damageCooldown;
+
+        // Attempt to get the PlayerHealth component at the start if player exists
+        if (player != null)
         {
-            Debug.LogError("No AStarGridManager found in scene!");
+            playerHealth = player.GetComponent<PlayerHealth>();
+            if (playerHealth == null)
+            {
+                Debug.LogWarning($"StraightChaser: Player GameObject found, but it doesn't have a PlayerHealth component.");
+            }
         }
-
-        movement = Vector2.right; // Default start direction for wandering
     }
 
     protected override void Update()
     {
-        if (player == null || pathfinder == null)
+        // --- Modification Starts Here ---
+
+        // 1. Ensure we have the player and PlayerHealth references
+        // (Could also re-find player if null, depending on game design)
+        if (player == null)
         {
-            WanderWithMemory();
-            ApplyMovement();
+            Wander(); // No player in scene, just wander
             return;
         }
-
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-
-        if (distance < detectionRange)
+        // If we didn't get playerHealth in Start, try again (optional, good if player spawns later)
+        if (playerHealth == null)
         {
-            if (Time.time - lastPathTime > repathRate)
+             playerHealth = player.GetComponent<PlayerHealth>();
+             if (playerHealth == null) {
+                  Wander(); // Player exists but no health component? Wander.
+                  return;
+             }
+        }
+
+        // 2. Check if the player is dead
+        if (playerHealth.IsDead)
+        {
+            Wander(); // Player is dead, revert to wandering behavior
+        }
+        else // Player exists, has health component, and is NOT dead
+        {
+            // Original chase/wander logic based on distance
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+            if (distance < detectionRange)
             {
-                lastPathTime = Time.time;
-                List<Vector3> path = pathfinder.FindPath(transform.position, player.transform.position);
-                if (path != null && path.Count > 0)
-                {
-                    currentPath = new Queue<Vector3>(path);
-                }
+                // Chase alive player
+                movement = (player.transform.position - transform.position).normalized;
+                lastValidDirection = movement;
             }
-
-            FollowPath();
+            else
+            {
+                // Player is alive but too far away
+                Wander();
+            }
         }
-        else
-        {
-            WanderWithMemory();
-        }
+        // --- Modification Ends Here ---
 
+        // Note: ApplyMovement() call moved to FixedUpdate in the previous step
+    }
+
+    // FixedUpdate remains the same - applies the 'movement' vector calculated in Update
+    protected virtual void FixedUpdate()
+    {
         ApplyMovement();
     }
 
-    private void FollowPath()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (currentPath.Count == 0)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            movement = Vector2.zero;
-            return;
+            // No changes needed here. If the player is dead, playerHealth.TakeDamage
+            // will likely do nothing anyway due to its internal checks.
+            // The chaser's own cooldown prevents spamming damage attempts.
+            if (playerHealth != null && Time.time >= lastDamageTime + damageCooldown)
+            {
+                playerHealth.TakeDamage(damage);
+                lastDamageTime = Time.time;
+                Debug.Log($"{gameObject.name} hit player. Attempting {damage} damage.");
+            }
         }
-
-        Vector3 target = currentPath.Peek();
-        Vector2 direction = (target - transform.position).normalized;
-
-        if (Vector2.Distance(transform.position, target) < nodeReachThreshold)
+        else
         {
-            currentPath.Dequeue();
+            movement = GetRandomDirection();
+            lastValidDirection = movement;
         }
-
-        movement = direction;
     }
 
-    private void WanderWithMemory()
+    protected override void Wander()
     {
-        if (Random.Range(0f, 100f) < 2f)
+        // Keep wandering logic simple for now
+        if (Random.Range(0f, 100f) < 1f)
         {
-            float angle = Random.Range(-90f, 90f);
-            movement = Quaternion.Euler(0, 0, angle) * movement;
+            movement = GetRandomDirection();
+            lastValidDirection = movement;
         }
-
-        movement = movement.normalized;
+        else
+        {
+             movement = lastValidDirection;
+        }
+        // IMPORTANT: Ensure wander doesn't accidentally use player position
+        // This implementation seems safe as it uses random/last direction.
     }
 
-    private void ApplyMovement()
+    private Vector2 GetRandomDirection()
+    {
+        Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+        return directions[Random.Range(0, directions.Length)];
+    }
+
+    protected override void ApplyMovement()
     {
         if (rb != null)
         {
-            rb.linearVelocity = movement * moveSpeed;
-        }
-    }
+            // --- Potential Improvement: Stop applying velocity if wandering into dead player ---
+            // This is trickier, requires knowing *what* we are wandering into.
+            // For now, just applying calculated movement. If player is dead, 'movement'
+            // should be from Wander(), not towards player.
 
-    public override void OnPlayerCollision(GameObject player)
-    {
-        Debug.Log("Straight Chaser specific OnPlayerCollision code executed.");
+             // Check if player is dead AND movement is non-zero (still wandering)
+             if (playerHealth != null && playerHealth.IsDead && movement != Vector2.zero) {
+                 // Optional: Dampen or stop velocity if wandering near dead player
+                 // This requires more complex checks (e.g., raycasting in wander direction)
+                 // Simplest fix is just letting Wander() dictate movement.
+             }
+
+             rb.linearVelocity = movement.normalized * moveSpeed;
+        }
     }
 }
