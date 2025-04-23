@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private bool canMove = true;
     private Vector2 lastMoveDirection = Vector2.down;
+    private bool isBookOpen = false;
 
     void Start()
     {
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        HandleBookToggle();
+
         if (playerHealth != null && playerHealth.IsDead)
         {
             movement = Vector2.zero;
@@ -105,6 +109,23 @@ public class PlayerMovement : MonoBehaviour
             movement = Vector2.zero;
             rb.linearVelocity = Vector2.zero;
             UpdateAnimatorMovement(Vector2.zero);
+        }
+    }
+
+    void HandleBookToggle()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!isBookOpen)
+            {
+                SceneManager.LoadSceneAsync("03_Book", LoadSceneMode.Additive);
+                isBookOpen = true;
+            }
+            else
+            {
+                SceneManager.UnloadSceneAsync("03_Book");
+                isBookOpen = false;
+            }
         }
     }
 }
