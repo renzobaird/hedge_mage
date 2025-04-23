@@ -9,49 +9,23 @@ public class LetterManager : MonoBehaviour
     public int numberOfDecoys = 5;
 
     public GameObject wordDisplayParent; // UI container with HorizontalLayoutGroup
-    public GameObject letterSlotPrefab;  // UI letter slot prefab
+    public GameObject letterSlotPrefab;   // UI letter slot prefab
+    public GameObject uiLetterSlotParent; // Assign this in the Inspector
 
     private List<Transform> availableSpots;
     private string selectedWord;
     private List<GameObject> uiLetterSlots = new List<GameObject>();
-    
-    
+
+
     void Start()
     {
         selectedWord = wordList[Random.Range(0, wordList.Length)];
 
-        // // Set word in ProgressManager
-        // WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
-        // if (progress != null)
-        // {
-        //     progress.SetWord(selectedWord);
-        //     progress.SetUISlots(uiLetterSlots); // Pass slots for UI updating
-        // }
-    private void GenerateUISlots(string word);
-    {
-        List<LetterSlot> uiSlots = new List<LetterSlot>();
-
-        foreach (char letter in word.ToUpper())
-        {
-            GameObject slotGO = Instantiate(letterSlotPrefab, uiLetterSlotParent);
-            LetterSlot slot = slotGO.GetComponent<LetterSlot>();
-
-            if (slot != null)
-            {
-                uiSlots.Add(slot); // ✅ Only add the actual LetterSlot, not GameObject
-            }
-            else
-            {
-                Debug.LogWarning("Missing LetterSlot component on prefab!");
-            }
-        }
-
-        WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
-        progress.SetUISlots(uiSlots); // ✅ Now you're passing List<LetterSlot>
-    }
-
         // Create UI letter display
         CreateUILetterDisplay(selectedWord);
+
+        // Generate UI Slots and set them in WordProgressManager
+        GenerateUISlots(selectedWord);
 
         // Spawn letter objects into maze
         availableSpots = new List<Transform>(spawnPoints);
@@ -76,6 +50,32 @@ public class LetterManager : MonoBehaviour
                 SpawnLetter(randomLetter);
                 decoysPlaced++;
             }
+        }
+    }
+
+    private void GenerateUISlots(string word)
+    {
+        List<LetterSlot> uiSlots = new List<LetterSlot>();
+
+        foreach (char letter in word.ToUpper())
+        {
+            GameObject slotGO = Instantiate(letterSlotPrefab, uiLetterSlotParent.transform); // Use uiLetterSlotParent
+            LetterSlot slot = slotGO.GetComponent<LetterSlot>();
+
+            if (slot != null)
+            {
+                uiSlots.Add(slot); // ✅ Only add the actual LetterSlot, not GameObject
+            }
+            else
+            {
+                Debug.LogWarning("Missing LetterSlot component on prefab!");
+            }
+        }
+
+        WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
+        if (progress != null)
+        {
+            progress.SetUISlots(uiSlots); // ✅ Now you're passing List<LetterSlot>
         }
     }
 

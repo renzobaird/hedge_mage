@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7497535375801254878}
   - component: {fileID: 5377245889037715006}
   - component: {fileID: 7115689942179933240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LetterObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2141910193
+  m_SortingLayer: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letter: 0
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 7497535375801254878}
