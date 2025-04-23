@@ -17,9 +17,52 @@ public class LetterManager : MonoBehaviour
     private List<GameObject> uiLetterSlots = new List<GameObject>();
 
 
+    // void Start()
+    // {
+    //     selectedWord = wordList[Random.Range(0, wordList.Length)];
+
+    //     // Create UI letter display
+    //     CreateUILetterDisplay(selectedWord);
+
+    //     // Generate UI Slots and set them in WordProgressManager
+    //     GenerateUISlots(selectedWord);
+
+    //     // Spawn letter objects into maze
+    //     availableSpots = new List<Transform>(spawnPoints);
+
+    //     // Spawn correct letters
+    //     foreach (char letter in selectedWord.ToUpper())
+    //     {
+    //         SpawnLetter(letter);
+    //     }
+
+    //     // Spawn decoy letters
+    //     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //     int decoysPlaced = 0;
+
+    //     while (decoysPlaced < numberOfDecoys && availableSpots.Count > 0)
+    //     {
+    //         char randomLetter = alphabet[Random.Range(0, alphabet.Length)];
+
+    //         // Prevent duplicates with main word
+    //         if (!selectedWord.ToUpper().Contains(randomLetter.ToString()))
+    //         {
+    //             SpawnLetter(randomLetter);
+    //             decoysPlaced++;
+    //         }
+    //     }
+    // }
+
     void Start()
     {
         selectedWord = wordList[Random.Range(0, wordList.Length)];
+
+        // Set word in WordProgressManager before creating UI
+        WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
+        if (progress != null)
+        {
+            progress.SetWord(selectedWord);
+        }
 
         // Create UI letter display
         CreateUILetterDisplay(selectedWord);
@@ -44,7 +87,6 @@ public class LetterManager : MonoBehaviour
         {
             char randomLetter = alphabet[Random.Range(0, alphabet.Length)];
 
-            // Prevent duplicates with main word
             if (!selectedWord.ToUpper().Contains(randomLetter.ToString()))
             {
                 SpawnLetter(randomLetter);

@@ -9,7 +9,7 @@ public class LetterObject : MonoBehaviour
     {
         letter = char.ToUpper(c);
 
-        Sprite sprite = LetterSpriteDatabase.Instance.GetSpriteForLetter(letter);
+        Sprite sprite = LetterSpriteDatabase.Instance.GetSprite(letter, true); // Show collected-style sprite in maze
 
         if (sprite != null)
         {

@@ -21,17 +21,17 @@ public class PlayerInventory : MonoBehaviour
         {
             char collectedChar = letterObj.letter;
 
-            // Report to progress tracker
+            // Report to WordProgressManager
             WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
             if (progress != null)
             {
                 progress.CollectLetter(collectedChar);
             }
 
-            // Optionally store the letter in inventory
+            // Store if you want, or ignore — this is optional
             item = other.gameObject;
 
-            // Destroy or disable the letter
+            // ❗ Destroy the letter object, whether correct or decoy
             Destroy(other.gameObject);
 
             Debug.Log($"Collected letter: {collectedChar}");
