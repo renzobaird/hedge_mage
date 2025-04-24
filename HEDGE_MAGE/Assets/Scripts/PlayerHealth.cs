@@ -137,5 +137,19 @@ public class PlayerHealth : MonoBehaviour
             UpdateUI();
             StartDeathSequence();
         }
+
+        // Letter collection logic
+        LetterObject letterObj = other.GetComponent<LetterObject>();
+        if (letterObj != null)
+        {
+            // Notify WordProgressManager of the collection
+            if (WordProgressManager.Instance != null)
+            {
+                WordProgressManager.Instance.CollectLetter(letterObj.letter);
+            }
+
+            // Remove the letter from the scene
+            Destroy(other.gameObject);
+        }
     }
 }

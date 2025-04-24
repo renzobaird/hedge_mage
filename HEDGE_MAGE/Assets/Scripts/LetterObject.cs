@@ -9,15 +9,24 @@ public class LetterObject : MonoBehaviour
     {
         letter = char.ToUpper(c);
 
-        Sprite sprite = LetterSpriteDatabase.Instance.GetSprite(letter, true); // Show collected-style sprite in maze
+        bool collected = WordProgressManager.Instance != null && WordProgressManager.Instance.IsLetterCollected(letter);
+        Sprite sprite = LetterSpriteDatabase.Instance.GetSprite(letter, collected);
 
-        if (sprite != null)
+        if (spriteRenderer != null)
         {
             spriteRenderer.sprite = sprite;
         }
         else
         {
-            Debug.LogWarning($"No sprite found for letter: {letter}");
+            Debug.LogError($"{gameObject.name} is missing a spriteRenderer reference!");
         }
     }
+
+    public void OnCollect()
+    {
+        gameObject.SetActive(false);
+        WordProgressManager.Instance?.CollectLetter(letter);
+    }
+
+    
 }

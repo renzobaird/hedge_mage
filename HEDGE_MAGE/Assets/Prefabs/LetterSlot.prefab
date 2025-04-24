@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7393226728179814120}
   - component: {fileID: 1247054909766887730}
   - component: {fileID: 7387893462211752000}
-  - component: {fileID: 1612974473688582577}
   - component: {fileID: 2315101206766674299}
   - component: {fileID: 965022767292860505}
   m_Layer: 8
@@ -78,20 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1612974473688582577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5017894695929562696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5b178eb859beb4085a09183fe43e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letter: 0
-  spriteRenderer: {fileID: 0}
 --- !u!212 &2315101206766674299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -159,7 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7253d2e4dbec2489877351742ed3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterImage: {fileID: 0}
-  filledSprite: {fileID: 0}
-  emptySprite: {fileID: 0}
-  letterText: {fileID: 0}
+  letterRenderer: {fileID: 2315101206766674299}

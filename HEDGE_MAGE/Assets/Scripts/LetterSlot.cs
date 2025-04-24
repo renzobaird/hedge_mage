@@ -1,37 +1,30 @@
-// using UnityEngine;
-// using UnityEngine.UI;
-
-// public class LetterSlot : MonoBehaviour
-// {
-//     public Image letterImage;
-//     public Sprite filledSprite;
-//     public Sprite emptySprite;
-
-//     public void SetLetter(char letter, bool collected)
-//     {
-//         if (letterImage != null)
-//         {
-//             letterImage.sprite = collected ? filledSprite : emptySprite;
-//         }
-//     }
-// }
-
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LetterSlot : MonoBehaviour
 {
-    public Image letterImage;
-    private char assignedLetter;
+    public SpriteRenderer letterRenderer;
 
-    public void SetLetter(char letter, bool collected)
+    private char letter;
+
+    public void SetLetter(char c, Sprite uncollectedSprite)
     {
-        assignedLetter = char.ToUpper(letter);
+        letter = c;
+        if (letterRenderer != null)
+            letterRenderer.sprite = uncollectedSprite;
+        else
+            Debug.LogWarning("LetterSlot: letterRenderer is not assigned.");
+    }
 
-        if (letterImage != null)
-        {
-            Sprite displaySprite = LetterSpriteDatabase.Instance.GetSprite(assignedLetter, collected);
-            letterImage.sprite = displaySprite;
-        }
+    public void SetCollectedSprite(Sprite collectedSprite)
+    {
+        if (letterRenderer != null)
+            letterRenderer.sprite = collectedSprite;
+        else
+            Debug.LogWarning("LetterSlot: letterRenderer is not assigned.");
+    }
+
+    public char GetLetter()
+    {
+        return letter;
     }
 }
