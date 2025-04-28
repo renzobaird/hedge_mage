@@ -1,36 +1,30 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class LetterManager : MonoBehaviour
 {
-    public string[] wordList = { "apple", "train", "cloud", "brick", "mouse" };
-    public GameObject letterPrefab; // Maze letter prefab (has SpriteRenderer)
+    public GameObject letterPrefab;
     public List<Transform> spawnPoints;
     public int numberOfDecoys = 5;
 
-    private List<Transform> availableSpots;
-    private string selectedWord;
+    private List<Transform> availableSpots = new List<Transform>();
 
     void Start()
     {
-        selectedWord = wordList[Random.Range(0, wordList.Length)];
-
-        // Set word in WordProgressManager — it now generates UI on its own
         WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
-        if (progress != null)
+        if (progress == null)
         {
-            progress.SetWord(selectedWord);
+            Debug.LogError("No WordProgressManager found in scene.");
+            return;
         }
 
         availableSpots = new List<Transform>(spawnPoints);
 
-        // Spawn correct letters
-        foreach (char letter in selectedWord.ToUpper())
+        foreach (char c in progress.GetTargetWord())
         {
-            SpawnLetter(letter);
+            SpawnLetter(c);
         }
 
-        // Spawn decoy letters
         string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int decoysPlaced = 0;
 
@@ -38,7 +32,7 @@ public class LetterManager : MonoBehaviour
         {
             char randomLetter = alphabet[Random.Range(0, alphabet.Length)];
 
-            if (!selectedWord.ToUpper().Contains(randomLetter.ToString()))
+            if (!progress.GetTargetWord().Contains(randomLetter.ToString()))
             {
                 SpawnLetter(randomLetter);
                 decoysPlaced++;
@@ -46,7 +40,7 @@ public class LetterManager : MonoBehaviour
         }
     }
 
-    void SpawnLetter(char letter)
+    private void SpawnLetter(char letter)
     {
         if (availableSpots.Count == 0) return;
 

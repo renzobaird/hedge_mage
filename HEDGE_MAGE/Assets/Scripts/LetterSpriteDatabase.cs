@@ -9,13 +9,11 @@ public class LetterSpriteDatabase : MonoBehaviour
     public struct LetterSpritePair
     {
         public char letter;
-        public Sprite uncollectedSprite; // gray version
-        public Sprite collectedSprite;   // black version
+        public Sprite uncollectedSprite;
+        public Sprite collectedSprite;
     }
 
-    [Header("Set these in the Inspector")]
     public List<LetterSpritePair> letterSprites;
-
     private Dictionary<char, LetterSpritePair> letterSpriteDict;
 
     private void Awake()
@@ -23,10 +21,9 @@ public class LetterSpriteDatabase : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // <-- Add this line
             BuildDictionary();
         }
-        else if (Instance != this)
+        else
         {
             Destroy(gameObject);
         }
@@ -42,23 +39,7 @@ public class LetterSpriteDatabase : MonoBehaviour
             {
                 letterSpriteDict.Add(upper, pair);
             }
-            else
-            {
-                Debug.LogWarning($"Duplicate letter sprite entry for: {upper}");
-            }
         }
-    }
-
-    public Sprite GetSprite(char c, bool collected)
-    {
-        c = char.ToUpper(c);
-        if (letterSpriteDict.TryGetValue(c, out var pair))
-        {
-            return collected ? pair.collectedSprite : pair.uncollectedSprite;
-        }
-
-        Debug.LogWarning($"No sprite found for letter: {c}");
-        return null;
     }
 
     public Sprite GetCollectedSprite(char c)

@@ -9,24 +9,22 @@ public class LetterObject : MonoBehaviour
     {
         letter = char.ToUpper(c);
 
-        bool collected = WordProgressManager.Instance != null && WordProgressManager.Instance.IsLetterCollected(letter);
-        Sprite sprite = LetterSpriteDatabase.Instance.GetSprite(letter, collected);
-
         if (spriteRenderer != null)
         {
-            spriteRenderer.sprite = sprite;
-        }
-        else
-        {
-            Debug.LogError($"{gameObject.name} is missing a spriteRenderer reference!");
+            spriteRenderer.sprite = LetterSpriteDatabase.Instance.GetUncollectedSprite(letter);
         }
     }
 
-    public void OnCollect()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        gameObject.SetActive(false);
-        WordProgressManager.Instance?.CollectLetter(letter);
+        if (other.CompareTag("Player"))
+        {
+            WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
+            if (progress != null)
+            {
+                progress.CollectLetter(letter);
+                gameObject.SetActive(false);
+            }
+        }
     }
-
-    
 }

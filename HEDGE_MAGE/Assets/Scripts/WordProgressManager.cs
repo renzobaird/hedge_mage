@@ -3,29 +3,24 @@ using UnityEngine;
 
 public class WordProgressManager : MonoBehaviour
 {
-    public static WordProgressManager Instance;
+    public static WordProgressManager Instance; // 🔥 ADD THIS LINE
 
-    [Header("UI Components")]
     public GameObject letterSlotPrefab;
     public Transform slotContainer;
 
-    [Header("Word Settings")]
     [SerializeField] private string[] wordList = { "APPLE", "HOUSE", "LIGHT", "BRICK", "WATER" };
-
-    public string targetWord { get; private set; }
-
+    private string targetWord;
     private HashSet<int> collectedIndexes = new HashSet<int>();
     private List<LetterSlot> letterSlots = new List<LetterSlot>();
-    private bool gameStarted = false;
 
     private void Awake()
     {
+        // 🔥 Make sure there's only one instance
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else if (Instance != this)
+        else
         {
             Destroy(gameObject);
         }
@@ -33,53 +28,36 @@ public class WordProgressManager : MonoBehaviour
 
     private void Start()
     {
-        // Optional: Auto-start a game when this script first loads
-        // StartNewGame();
+        StartNewGame();
     }
 
     public void StartNewGame()
     {
-        if (gameStarted) return;
-
         targetWord = GetRandomWord().ToUpper();
         collectedIndexes.Clear();
         SetupUISlots();
-        UpdateUIDisplay();
-        gameStarted = true;
-    }
-
-    public void ResetProgress()
-    {
-        collectedIndexes.Clear();
-        UpdateUIDisplay();
     }
 
     private string GetRandomWord()
     {
-        if (wordList == null || wordList.Length == 0) return "PLACE";
-        int index = Random.Range(0, wordList.Length);
-        return wordList[index];
+        if (wordList.Length == 0) return "PLACE";
+        return wordList[Random.Range(0, wordList.Length)];
     }
 
     private void SetupUISlots()
     {
-        if (slotContainer == null) return;
-
         foreach (Transform child in slotContainer)
         {
             Destroy(child.gameObject);
         }
-
         letterSlots.Clear();
 
         foreach (char c in targetWord)
         {
             GameObject slotObj = Instantiate(letterSlotPrefab, slotContainer);
             LetterSlot slot = slotObj.GetComponent<LetterSlot>();
-
             Sprite uncollectedSprite = LetterSpriteDatabase.Instance.GetUncollectedSprite(c);
             slot.SetLetter(c, uncollectedSprite);
-
             letterSlots.Add(slot);
         }
     }
@@ -97,13 +75,11 @@ public class WordProgressManager : MonoBehaviour
             }
         }
 
-        UpdateUIDisplay();
+        UpdateSlots();
     }
 
-    private void UpdateUIDisplay()
+    private void UpdateSlots()
     {
-        if (letterSlots == null || letterSlots.Count == 0) return;
-
         for (int i = 0; i < targetWord.Length; i++)
         {
             if (i < letterSlots.Count)
@@ -124,17 +100,13 @@ public class WordProgressManager : MonoBehaviour
         for (int i = 0; i < targetWord.Length; i++)
         {
             if (targetWord[i] == c && collectedIndexes.Contains(i))
-            {
                 return true;
-            }
         }
         return false;
     }
 
-    // Call this when starting a new session (like from a Play button in title screen)
-    public void ForceRestart()
+    public string GetTargetWord()
     {
-        gameStarted = false;
-        StartNewGame();
+        return targetWord;
     }
 }
