@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class PlayerHealth : MonoBehaviour
@@ -13,15 +11,12 @@ public class PlayerHealth : MonoBehaviour
     public float respawnImmunityTime = 1.5f;
     public Transform spawnPoint;
 
-    [Header("Scene Management")]
-    public string failureSceneName = "05_Level Failure";
-
     [Header("UI References")]
     public TMP_Text livesText;
     public TMP_Text healthText;
 
     [Header("Animation")]
-    public Animator animator; // Assign in Inspector
+    public Animator animator;
     private PlayerMovement playerMovement;
 
     private int currentLives;
@@ -30,7 +25,6 @@ public class PlayerHealth : MonoBehaviour
     private float lastDamageTime = -10f;
     private bool isDead = false;
     public bool IsDead => isDead;
-
 
     void Start()
     {
@@ -72,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
             playerMovement.SetMovementEnabled(false);
         }
 
-        Invoke(nameof(LoseLife), 0.5f); // Slight delay to allow animation to show
+        Invoke(nameof(LoseLife), 0.5f);
     }
 
     void LoseLife()
@@ -86,7 +80,10 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(LoadFailureScene), respawnDelay);
+            if (LevelPopupManager.Instance != null)
+            {
+                LevelPopupManager.Instance.ShowLevelFailPopup();
+            }
         }
     }
 
@@ -102,11 +99,6 @@ public class PlayerHealth : MonoBehaviour
         {
             playerMovement.SetMovementEnabled(true);
         }
-    }
-
-    void LoadFailureScene()
-    {
-        SceneManager.LoadScene(failureSceneName);
     }
 
     bool IsAlive()
@@ -138,17 +130,13 @@ public class PlayerHealth : MonoBehaviour
             StartDeathSequence();
         }
 
-        // Letter collection logic
         LetterObject letterObj = other.GetComponent<LetterObject>();
         if (letterObj != null)
         {
-            // Notify WordProgressManager of the collection
             if (WordProgressManager.Instance != null)
             {
                 WordProgressManager.Instance.CollectLetter(letterObj.letter);
             }
-
-            // Remove the letter from the scene
             Destroy(other.gameObject);
         }
     }

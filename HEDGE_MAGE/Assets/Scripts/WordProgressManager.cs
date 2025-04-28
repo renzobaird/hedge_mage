@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class WordProgressManager : MonoBehaviour
 {
@@ -14,11 +13,6 @@ public class WordProgressManager : MonoBehaviour
     private int currentWordIndex = 0;
     private HashSet<int> collectedIndexes = new HashSet<int>();
     private List<LetterSlot> letterSlots = new List<LetterSlot>();
-
-    // 🔥 NEW - Popups - using GameObject type to ensure Inspector shows them
-    public GameObject bookPopup;
-    public GameObject levelCompletePopup;
-    public GameObject levelFailPopup;
 
     private void Awake()
     {
@@ -35,14 +29,6 @@ public class WordProgressManager : MonoBehaviour
     private void Start()
     {
         StartNewGame();
-    }
-
-    public void CloseBookPopup()
-    {
-        if (bookPopup != null)
-        {
-            bookPopup.SetActive(false);
-        }
     }
 
     public void StartNewGame()
@@ -95,7 +81,7 @@ public class WordProgressManager : MonoBehaviour
 
         if (IsWordComplete())
         {
-            ShowLevelCompletePopup();
+            LevelPopupManager.Instance.ShowLevelCompletePopup();
         }
     }
 
@@ -115,45 +101,8 @@ public class WordProgressManager : MonoBehaviour
         }
     }
 
-    public bool IsLetterCollected(char c)
-    {
-        c = char.ToUpper(c);
-        for (int i = 0; i < targetWord.Length; i++)
-        {
-            if (targetWord[i] == c && collectedIndexes.Contains(i))
-                return true;
-        }
-        return false;
-    }
-
-    public string GetTargetWord()
-    {
-        return targetWord;
-    }
-
     private bool IsWordComplete()
     {
         return collectedIndexes.Count == targetWord.Length;
-    }
-
-    private void ShowLevelCompletePopup()
-    {
-        if (levelCompletePopup != null)
-        {
-            levelCompletePopup.SetActive(true);
-        }
-    }
-
-    public void ShowLevelFailPopup()
-    {
-        if (levelFailPopup != null)
-        {
-            levelFailPopup.SetActive(true);
-        }
-    }
-
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
