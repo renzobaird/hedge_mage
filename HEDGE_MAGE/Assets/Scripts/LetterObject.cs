@@ -28,6 +28,9 @@ public class LetterObject : MonoBehaviour
                 WordProgressManager.Instance.CollectLetter(letter);
             }
 
+            // ✅ Add a Debug Log here
+            Debug.Log($"Letter '{letter}' collected by player at position {transform.position}.");
+
             gameObject.SetActive(false);
         }
     }

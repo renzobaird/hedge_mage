@@ -37,6 +37,14 @@ public class WordProgressManager : MonoBehaviour
         StartNewGame();
     }
 
+    public void CloseBookPopup()
+    {
+        if (bookPopup != null)
+        {
+            bookPopup.SetActive(false);
+        }
+    }
+
     public void StartNewGame()
     {
         targetWord = GetNextWord().ToUpper();
