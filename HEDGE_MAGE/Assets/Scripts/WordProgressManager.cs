@@ -1,21 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WordProgressManager : MonoBehaviour
 {
-    public static WordProgressManager Instance; // 🔥 ADD THIS LINE
+    public static WordProgressManager Instance;
 
     public GameObject letterSlotPrefab;
     public Transform slotContainer;
 
     [SerializeField] private string[] wordList = { "APPLE", "HOUSE", "LIGHT", "BRICK", "WATER" };
     private string targetWord;
+    private int currentWordIndex = 0;
     private HashSet<int> collectedIndexes = new HashSet<int>();
     private List<LetterSlot> letterSlots = new List<LetterSlot>();
 
+    // 🔥 NEW - Popups - using GameObject type to ensure Inspector shows them
+    public GameObject bookPopup;
+    public GameObject levelCompletePopup;
+    public GameObject levelFailPopup;
+
     private void Awake()
     {
-        // 🔥 Make sure there's only one instance
         if (Instance == null)
         {
             Instance = this;
@@ -33,15 +39,17 @@ public class WordProgressManager : MonoBehaviour
 
     public void StartNewGame()
     {
-        targetWord = GetRandomWord().ToUpper();
+        targetWord = GetNextWord().ToUpper();
         collectedIndexes.Clear();
         SetupUISlots();
     }
 
-    private string GetRandomWord()
+    private string GetNextWord()
     {
         if (wordList.Length == 0) return "PLACE";
-        return wordList[Random.Range(0, wordList.Length)];
+        string word = wordList[currentWordIndex % wordList.Length];
+        currentWordIndex++;
+        return word;
     }
 
     private void SetupUISlots()
@@ -76,6 +84,11 @@ public class WordProgressManager : MonoBehaviour
         }
 
         UpdateSlots();
+
+        if (IsWordComplete())
+        {
+            ShowLevelCompletePopup();
+        }
     }
 
     private void UpdateSlots()
@@ -108,5 +121,31 @@ public class WordProgressManager : MonoBehaviour
     public string GetTargetWord()
     {
         return targetWord;
+    }
+
+    private bool IsWordComplete()
+    {
+        return collectedIndexes.Count == targetWord.Length;
+    }
+
+    private void ShowLevelCompletePopup()
+    {
+        if (levelCompletePopup != null)
+        {
+            levelCompletePopup.SetActive(true);
+        }
+    }
+
+    public void ShowLevelFailPopup()
+    {
+        if (levelFailPopup != null)
+        {
+            levelFailPopup.SetActive(true);
+        }
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

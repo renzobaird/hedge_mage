@@ -11,7 +11,11 @@ public class LetterObject : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            spriteRenderer.sprite = LetterSpriteDatabase.Instance.GetUncollectedSprite(letter);
+            bool alreadyCollected = WordProgressManager.Instance != null && WordProgressManager.Instance.IsLetterCollected(letter);
+
+            spriteRenderer.sprite = alreadyCollected
+                ? LetterSpriteDatabase.Instance.GetCollectedSprite(letter)
+                : LetterSpriteDatabase.Instance.GetUncollectedSprite(letter);
         }
     }
 
@@ -19,12 +23,12 @@ public class LetterObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
-            if (progress != null)
+            if (WordProgressManager.Instance != null)
             {
-                progress.CollectLetter(letter);
-                gameObject.SetActive(false);
+                WordProgressManager.Instance.CollectLetter(letter);
             }
+
+            gameObject.SetActive(false);
         }
     }
 }
