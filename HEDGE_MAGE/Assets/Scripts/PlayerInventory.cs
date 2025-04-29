@@ -31,7 +31,7 @@ public class PlayerInventory : MonoBehaviour
             // Store if you want, or ignore — this is optional
             item = other.gameObject;
 
-            // ❗ Destroy the letter object, whether correct or decoy
+            //  Destroy the letter object, whether correct or decoy
             Destroy(other.gameObject);
 
             Debug.Log($"Collected letter: {collectedChar}");

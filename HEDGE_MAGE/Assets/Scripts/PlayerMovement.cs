@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -116,15 +115,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!isBookOpen)
+            isBookOpen = !isBookOpen;
+
+            if (isBookOpen)
             {
-                SceneManager.LoadSceneAsync("03_Book", LoadSceneMode.Additive);
-                isBookOpen = true;
+                LevelPopupManager.Instance.ShowBookPopup();
             }
             else
             {
-                SceneManager.UnloadSceneAsync("03_Book");
-                isBookOpen = false;
+                LevelPopupManager.Instance.CloseBookPopup();
             }
         }
     }

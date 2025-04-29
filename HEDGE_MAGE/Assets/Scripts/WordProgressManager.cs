@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WordProgressManager : MonoBehaviour
 {
@@ -12,7 +13,12 @@ public class WordProgressManager : MonoBehaviour
     private string targetWord;
     private int currentWordIndex = 0;
     private HashSet<int> collectedIndexes = new HashSet<int>();
-    private List<LetterSlot> letterSlots = new List<LetterSlot>();
+    private List<LetterSlotUI> letterSlots = new List<LetterSlotUI>();
+
+
+    public GameObject bookPopup;
+    public GameObject levelCompletePopup;
+    public GameObject levelFailPopup;
 
     private void Awake()
     {
@@ -48,20 +54,41 @@ public class WordProgressManager : MonoBehaviour
 
     private void SetupUISlots()
     {
+        Debug.Log($"Clearing previous letter slots. Existing count: {slotContainer.childCount}");
+
         foreach (Transform child in slotContainer)
         {
             Destroy(child.gameObject);
         }
         letterSlots.Clear();
 
+        Debug.Log($"Setting up slots for new word: {targetWord}");
+
         foreach (char c in targetWord)
         {
             GameObject slotObj = Instantiate(letterSlotPrefab, slotContainer);
-            LetterSlot slot = slotObj.GetComponent<LetterSlot>();
+            LetterSlotUI slot = slotObj.GetComponent<LetterSlotUI>();
+
+
+            if (slot == null)
+            {
+                Debug.LogError("Instantiated LetterSlot prefab is missing the LetterSlot component.");
+                continue;
+            }
+
             Sprite uncollectedSprite = LetterSpriteDatabase.Instance.GetUncollectedSprite(c);
+            if (uncollectedSprite == null)
+            {
+                Debug.LogWarning($"Missing uncollected sprite for letter: {c}");
+            }
+
             slot.SetLetter(c, uncollectedSprite);
             letterSlots.Add(slot);
+
+            Debug.Log($"Slot created for letter: {c}");
         }
+
+        Debug.Log($"Total slots created: {letterSlots.Count}");
     }
 
     public void CollectLetter(char collected)
@@ -81,7 +108,7 @@ public class WordProgressManager : MonoBehaviour
 
         if (IsWordComplete())
         {
-            LevelPopupManager.Instance.ShowLevelCompletePopup();
+            ShowLevelCompletePopup();
         }
     }
 
@@ -101,8 +128,48 @@ public class WordProgressManager : MonoBehaviour
         }
     }
 
+    public bool IsLetterCollected(char c)
+    {
+        c = char.ToUpper(c);
+        for (int i = 0; i < targetWord.Length; i++)
+        {
+            if (targetWord[i] == c && collectedIndexes.Contains(i))
+                return true;
+        }
+        return false;
+    }
+
+    public string GetTargetWord()
+    {
+        return targetWord;
+    }
+
     private bool IsWordComplete()
     {
         return collectedIndexes.Count == targetWord.Length;
+    }
+
+    private void ShowLevelCompletePopup()
+    {
+        if (levelCompletePopup != null)
+        {
+            levelCompletePopup.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void ShowLevelFailPopup()
+    {
+        if (levelFailPopup != null)
+        {
+            levelFailPopup.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
