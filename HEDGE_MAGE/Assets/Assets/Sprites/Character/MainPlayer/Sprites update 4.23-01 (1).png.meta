@@ -435,10 +435,10 @@ TextureImporter:
       name: 2 heart
       rect:
         serializedVersion: 2
-        x: 74
-        y: 2668
-        width: 494
-        height: 230
+        x: 78
+        y: 2672
+        width: 757
+        height: 231
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,9 +458,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 81
-        y: 2385
-        width: 230
-        height: 229
+        y: 2389
+        width: 757
+        height: 231
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

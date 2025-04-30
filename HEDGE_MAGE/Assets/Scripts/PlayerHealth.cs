@@ -142,9 +142,11 @@
 //     }
 // }
 
+
 using UnityEngine;
 using TMPro;
 using System; // Needed for TimeSpan formatting
+using UnityEngine.UI; // For Image component
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -157,7 +159,10 @@ public class PlayerHealth : MonoBehaviour
     public Transform spawnPoint;
 
     [Header("UI References")]
-    public TMP_Text livesText;
+    public Image lifeImage; // NEW: UI Image to show life sprite
+    public Sprite life3Sprite;
+    public Sprite life2Sprite;
+    public Sprite life1Sprite;
     public TMP_Text healthText;
     public TMP_Text timerText; // Reference to the *in-game* timer UI text
 
@@ -172,7 +177,6 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead = false;
     public bool IsDead => isDead;
 
-    // Flag to prevent the timer from updating after the level ends
     private bool levelEnded = false;
 
     void Start()
@@ -182,26 +186,21 @@ public class PlayerHealth : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         initialSpawnPoint = spawnPoint != null ? spawnPoint.position : transform.position;
         transform.position = initialSpawnPoint;
-        UpdateUI(); // Initial UI update for health/lives
-        levelEnded = false; // Ensure level hasn't ended at start
-        Time.timeScale = 1f; // Ensure time scale is normal at start
+        UpdateUI();
+        levelEnded = false;
+        Time.timeScale = 1f;
     }
 
     void Update()
     {
-        // --- Timer Logic ---
-        // Only update the timer if the level hasn't ended
         if (!levelEnded && timerText != null)
         {
-            // Get the time elapsed since the scene loaded
-            float timeElapsed = Time.timeSinceLevelLoad; // Use Time.timeSinceLevelLoad for per-level time
-
+            float timeElapsed = Time.timeSinceLevelLoad;
             int minutes = Mathf.FloorToInt(timeElapsed / 60F);
             int seconds = Mathf.FloorToInt(timeElapsed % 60F);
             timerText.text = $"{minutes:00}:{seconds:00}";
         }
     }
-
 
     public void TakeDamage(int damageTaken)
     {
@@ -220,7 +219,7 @@ public class PlayerHealth : MonoBehaviour
 
     void StartDeathSequence()
     {
-        if (!IsAlive() || isDead) return; // Added isDead check here too
+        if (!IsAlive() || isDead) return;
 
         isDead = true;
         if (animator != null)
@@ -233,7 +232,7 @@ public class PlayerHealth : MonoBehaviour
             playerMovement.SetMovementEnabled(false);
         }
 
-        Invoke(nameof(LoseLife), 0.5f); // Delay slightly for animation
+        Invoke(nameof(LoseLife), 0.5f);
     }
 
     void LoseLife()
@@ -245,22 +244,18 @@ public class PlayerHealth : MonoBehaviour
         {
             Invoke(nameof(Respawn), respawnDelay);
         }
-        else // Player has run out of lives
+        else
         {
-            levelEnded = true; // Stop the UI timer update
+            levelEnded = true;
             if (LevelPopupManager.Instance != null)
             {
-                // <<< MODIFIED: Get current time and pass it to the popup manager
-                float finalTime = Time.timeSinceLevelLoad; // Get time *before* pausing
+                float finalTime = Time.timeSinceLevelLoad;
                 LevelPopupManager.Instance.ShowLevelFailPopup(finalTime);
             }
             else
             {
                 Debug.LogWarning("LevelPopupManager instance not found. Cannot show fail popup.");
-                // Optionally still pause here if needed
-                // Time.timeScale = 0f;
             }
-            // Game Over logic - Don't respawn
         }
     }
 
@@ -268,7 +263,6 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.position = initialSpawnPoint;
         currentHealth = maxHealth;
-        // Set lastDamageTime slightly in the past relative to respawn time to allow immunity
         lastDamageTime = Time.time - (damageCooldown - respawnImmunityTime);
         isDead = false;
         UpdateUI();
@@ -277,26 +271,40 @@ public class PlayerHealth : MonoBehaviour
         {
             playerMovement.SetMovementEnabled(true);
         }
-        // Reset any relevant animation states if needed
-        // if (animator != null) animator.ResetTrigger("Die"); // Example
     }
 
     bool IsAlive()
     {
-        // Consider isDead flag as well, though currentLives <= 0 is the main check for game over
         return currentLives > 0;
     }
 
     void UpdateUI()
     {
-        if (livesText != null)
+        if (lifeImage != null)
         {
-            livesText.text = $"Lives: {currentLives}";
+            switch (currentLives)
+            {
+                case 3:
+                    lifeImage.sprite = life3Sprite;
+                    lifeImage.enabled = true;
+                    break;
+                case 2:
+                    lifeImage.sprite = life2Sprite;
+                    lifeImage.enabled = true;
+                    break;
+                case 1:
+                    lifeImage.sprite = life1Sprite;
+                    lifeImage.enabled = true;
+                    break;
+                default:
+                    lifeImage.enabled = false;
+                    break;
+            }
         }
 
         if (healthText != null)
         {
-            healthText.text = $"Health: {currentHealth}";
+            healthText.text = $"{currentHealth} HP";
         }
     }
 
@@ -304,58 +312,52 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("KillZone"))
         {
-           // Use the respawnImmunityTime directly for the check after respawn
             if (Time.time - lastDamageTime < respawnImmunityTime || !IsAlive() || isDead) return;
 
             currentHealth = 0;
             UpdateUI();
-            StartDeathSequence(); // Trigger the death sequence
+            StartDeathSequence();
         }
-        // Handle LetterObject collection... (kept your existing logic)
+
         LetterObject letterObj = other.GetComponent<LetterObject>();
         if (letterObj != null)
         {
-             if (WordProgressManager.Instance != null)
-             {
-                 WordProgressManager.Instance.CollectLetter(letterObj.letter);
-             }
-             else
-             {
-                  Debug.LogWarning("WordProgressManager instance not found. Cannot collect letter.");
-             }
-             Destroy(other.gameObject);
+            if (WordProgressManager.Instance != null)
+            {
+                WordProgressManager.Instance.CollectLetter(letterObj.letter);
+            }
+            else
+            {
+                Debug.LogWarning("WordProgressManager instance not found. Cannot collect letter.");
+            }
+            Destroy(other.gameObject);
         }
 
-        // <<< ADDED: Example for Level Completion Trigger
-        if (other.CompareTag("LevelEndTrigger")) // Use a tag like "LevelEndTrigger" for your goal object
+        if (other.CompareTag("LevelEndTrigger"))
         {
-             CompleteLevel();
+            CompleteLevel();
         }
     }
 
-    // <<< ADDED: Method to handle level completion
     public void CompleteLevel()
     {
-        if (levelEnded) return; // Prevent multiple completions
+        Debug.Log("Level Complete Triggered!");
+        if (levelEnded) return;
 
-        levelEnded = true; // Stop the UI timer update
+        levelEnded = true;
         if (playerMovement != null)
         {
-            playerMovement.SetMovementEnabled(false); // Stop player movement
+            playerMovement.SetMovementEnabled(false);
         }
 
         if (LevelPopupManager.Instance != null)
         {
-            // Get current time and pass it to the popup manager
-            float finalTime = Time.timeSinceLevelLoad; // Get time *before* pausing
+            float finalTime = Time.timeSinceLevelLoad;
             LevelPopupManager.Instance.ShowLevelCompletePopup(finalTime);
         }
         else
         {
             Debug.LogWarning("LevelPopupManager instance not found. Cannot show complete popup.");
-            // Optionally still pause here if needed
-            // Time.timeScale = 0f;
         }
-        // You might want to play a victory sound or animation here
     }
 }

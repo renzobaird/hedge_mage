@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro; // <<< ADDED: Namespace for TextMeshPro
-using System; // <<< ADDED: Namespace for TimeSpan formatting
+using TMPro;
 
 public class LevelPopupManager : MonoBehaviour
 {
@@ -11,14 +10,12 @@ public class LevelPopupManager : MonoBehaviour
     public GameObject levelFailPopup;
     public GameObject levelCompletePopup;
     public GameObject bookPopup;
-    public GameObject buttonBook; // Assign this in the Inspector
+    public GameObject buttonBook;
 
-    // <<< ADDED: References to the Text components on the popups
-    [Header("UI Text References")]
-    public TMP_Text failTimeText;       // Assign the TextMeshPro component from levelFailPopup
-    public TMP_Text completeTimeText;   // Assign the TextMeshPro component from levelCompletePopup
+    [Header("Time Display Texts")]
+    public TMP_Text failTimeText;      // 👈 assign the text in LevelFailPopup
+    public TMP_Text completeTimeText;  // 👈 assign the text in LevelCompletePopup
 
-    // Store the final time formatted string
     private string finalTimeFormatted;
 
     private void Awake()
@@ -33,65 +30,40 @@ public class LevelPopupManager : MonoBehaviour
         }
     }
 
-    // <<< MODIFIED: Accept final time as a parameter
     public void ShowLevelFailPopup(float finalTime)
     {
         if (levelFailPopup != null)
         {
-            FormatAndStoreTime(finalTime); // Format the time
-
-            // <<< ADDED: Update the time text on the fail popup
+            FormatAndStoreTime(finalTime);
             if (failTimeText != null)
-            {
-                failTimeText.text = $"{finalTimeFormatted}";
-            }
-            else
-            {
-                Debug.LogWarning("Fail Time Text reference not set in LevelPopupManager.");
-            }
+                failTimeText.text = finalTimeFormatted;
 
             levelFailPopup.SetActive(true);
             HideBookButton();
-            Time.timeScale = 0f; // Pause the game *after* getting the time
+            Time.timeScale = 0f;
         }
     }
 
-    // <<< MODIFIED: Accept final time as a parameter
     public void ShowLevelCompletePopup(float finalTime)
     {
         if (levelCompletePopup != null)
         {
-            FormatAndStoreTime(finalTime); // Format the time
-
-            // <<< ADDED: Update the time text on the complete popup
+            FormatAndStoreTime(finalTime);
             if (completeTimeText != null)
-            {
-                completeTimeText.text = $"{finalTimeFormatted}";
-            }
-            else
-            {
-                Debug.LogWarning("Complete Time Text reference not set in LevelPopupManager.");
-            }
+                completeTimeText.text = finalTimeFormatted;
 
             levelCompletePopup.SetActive(true);
             HideBookButton();
-            Time.timeScale = 0f; // Pause the game *after* getting the time
+            Time.timeScale = 0f;
         }
     }
 
-    // Helper method to format the time consistently
     private void FormatAndStoreTime(float timeInSeconds)
     {
-        // Using the same formatting as your PlayerHealth script
         int minutes = Mathf.FloorToInt(timeInSeconds / 60F);
         int seconds = Mathf.FloorToInt(timeInSeconds % 60F);
         finalTimeFormatted = $"{minutes:00}:{seconds:00}";
-
-        // Alternative using TimeSpan:
-        // TimeSpan timeSpan = TimeSpan.FromSeconds(timeInSeconds);
-        // finalTimeFormatted = $"{timeSpan.Minutes:00}:{timeSpan.Seconds:00}";
     }
-
 
     public void ShowBookPopup()
     {
@@ -124,10 +96,7 @@ public class LevelPopupManager : MonoBehaviour
     {
         Debug.Log("Next level button clicked.");
         Time.timeScale = 1f;
-        // Make sure this loads the *actual* next level, not restarts the current one
-        // Example: SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // You'll need a more robust scene management system for a full game.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Simple next level logic
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void HideBookButton()
@@ -146,6 +115,8 @@ public class LevelPopupManager : MonoBehaviour
         }
     }
 }
+
+
 
 // using UnityEngine;
 
