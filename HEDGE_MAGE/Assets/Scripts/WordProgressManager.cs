@@ -15,7 +15,6 @@ public class WordProgressManager : MonoBehaviour
     private HashSet<int> collectedIndexes = new HashSet<int>();
     private List<LetterSlotUI> letterSlots = new List<LetterSlotUI>();
 
-
     public GameObject bookPopup;
     public GameObject levelCompletePopup;
     public GameObject levelFailPopup;
@@ -46,6 +45,7 @@ public class WordProgressManager : MonoBehaviour
 
     private string GetNextWord()
     {
+        // Only go to the next word if it's a successful level
         if (wordList.Length == 0) return "PLACE";
         string word = wordList[currentWordIndex % wordList.Length];
         currentWordIndex++;
@@ -68,7 +68,6 @@ public class WordProgressManager : MonoBehaviour
         {
             GameObject slotObj = Instantiate(letterSlotPrefab, slotContainer);
             LetterSlotUI slot = slotObj.GetComponent<LetterSlotUI>();
-
 
             if (slot == null)
             {
@@ -169,7 +168,7 @@ public class WordProgressManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // <-- Ensure unpausing always
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

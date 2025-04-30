@@ -115,16 +115,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isBookOpen = !isBookOpen;
-
-            if (isBookOpen)
-            {
-                LevelPopupManager.Instance.ShowBookPopup();
-            }
-            else
-            {
-                LevelPopupManager.Instance.CloseBookPopup();
-            }
+            ToggleBookPopup();
         }
+    }
+
+    public void ToggleBookPopup()
+    {
+        isBookOpen = !isBookOpen;
+
+        if (isBookOpen)
+        {
+            LevelPopupManager.Instance.ShowBookPopup();
+        }
+        else
+        {
+            LevelPopupManager.Instance.CloseBookPopup();
+        }
+    }
+
+    public void ToggleBookPopupFromUI()
+    {
+        Debug.Log("Book button clicked!");
+        ToggleBookPopup();
     }
 }

@@ -4,6 +4,11 @@ public class PlayerInventory : MonoBehaviour
 {
     public GameObject item;
 
+    private void Start()
+    {
+        item = null; // Clear any carried-over letter reference on new scene
+    }
+
     public bool HasItem() => item != null;
 
     public GameObject TakeItem()
@@ -28,10 +33,10 @@ public class PlayerInventory : MonoBehaviour
                 progress.CollectLetter(collectedChar);
             }
 
-            // Store if you want, or ignore — this is optional
+            // Store if needed
             item = other.gameObject;
 
-            //  Destroy the letter object, whether correct or decoy
+            // Destroy the letter object (correct or decoy)
             Destroy(other.gameObject);
 
             Debug.Log($"Collected letter: {collectedChar}");

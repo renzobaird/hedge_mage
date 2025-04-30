@@ -11,7 +11,8 @@ public class LetterObject : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            bool alreadyCollected = WordProgressManager.Instance != null && WordProgressManager.Instance.IsLetterCollected(letter);
+            bool alreadyCollected = WordProgressManager.Instance != null &&
+                                    WordProgressManager.Instance.IsLetterCollected(letter);
 
             spriteRenderer.sprite = alreadyCollected
                 ? LetterSpriteDatabase.Instance.GetCollectedSprite(letter)
@@ -28,9 +29,9 @@ public class LetterObject : MonoBehaviour
                 WordProgressManager.Instance.CollectLetter(letter);
             }
 
-            //  Add a Debug Log here
             Debug.Log($"Letter '{letter}' collected by player at position {transform.position}.");
 
+            // Hide letter instead of destroying it, if reuse is possible
             gameObject.SetActive(false);
         }
     }
