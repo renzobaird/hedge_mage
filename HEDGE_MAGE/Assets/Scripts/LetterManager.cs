@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,19 +11,11 @@ public class LetterManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnLettersNextFrame());
-    }
-
-    private IEnumerator SpawnLettersNextFrame()
-    {
-        // Wait 1 frame to ensure WordProgressManager has initialized the new word
-        yield return null;
-
         WordProgressManager progress = FindFirstObjectByType<WordProgressManager>();
         if (progress == null)
         {
             Debug.LogError("No WordProgressManager found in scene.");
-            yield break;
+            return;
         }
 
         availableSpots = new List<Transform>(spawnPoints);

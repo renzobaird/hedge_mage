@@ -74,9 +74,10 @@ public class LevelPopupManager : MonoBehaviour
     {
         Debug.Log("Next level button clicked.");
         Time.timeScale = 1f;
-        WordProgressManager.Instance.StartNewGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
 
     private void HideBookButton()
     {

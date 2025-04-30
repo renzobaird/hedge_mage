@@ -171,4 +171,5 @@ public class WordProgressManager : MonoBehaviour
         Time.timeScale = 1f; // <-- Ensure unpausing always
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
