@@ -1,13 +1,24 @@
+
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LetterManager : MonoBehaviour
 {
+    public static LetterManager Instance;
+
     public GameObject letterPrefab;
     public List<Transform> spawnPoints;
     public int numberOfDecoys = 5;
 
     private List<Transform> availableSpots = new List<Transform>();
+    private List<GameObject> spawnedLetters = new List<GameObject>();
+
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
 
     void Start()
     {
@@ -18,13 +29,28 @@ public class LetterManager : MonoBehaviour
             return;
         }
 
+        ResetLettersForNewWord(progress.GetTargetWord());
+    }
+
+    public void ResetLettersForNewWord(string word)
+    {
+        // Destroy old letters
+        foreach (GameObject obj in spawnedLetters)
+        {
+            if (obj != null) Destroy(obj);
+        }
+        spawnedLetters.Clear();
+
+        // Reset available spots
         availableSpots = new List<Transform>(spawnPoints);
 
-        foreach (char c in progress.GetTargetWord())
+        // Spawn correct letters
+        foreach (char c in word)
         {
             SpawnLetter(c);
         }
 
+        // Spawn decoys
         string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int decoysPlaced = 0;
 
@@ -32,7 +58,7 @@ public class LetterManager : MonoBehaviour
         {
             char randomLetter = alphabet[Random.Range(0, alphabet.Length)];
 
-            if (!progress.GetTargetWord().Contains(randomLetter.ToString()))
+            if (!word.Contains(randomLetter.ToString()))
             {
                 SpawnLetter(randomLetter);
                 decoysPlaced++;
@@ -50,6 +76,7 @@ public class LetterManager : MonoBehaviour
 
         GameObject obj = Instantiate(letterPrefab, spot.position, Quaternion.identity);
         obj.SetActive(true);
+        spawnedLetters.Add(obj);
 
         LetterObject letterObj = obj.GetComponent<LetterObject>();
         if (letterObj != null)

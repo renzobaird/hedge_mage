@@ -1,6 +1,7 @@
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
+
 
 public class LevelPopupManager : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class LevelPopupManager : MonoBehaviour
     public GameObject buttonBook;
 
     [Header("Time Display Texts")]
-    public TMP_Text failTimeText;      // 👈 assign the text in LevelFailPopup
-    public TMP_Text completeTimeText;  // 👈 assign the text in LevelCompletePopup
+    public TMP_Text failTimeText;      // assign the text in LevelFailPopup
+    public TMP_Text completeTimeText;  //  assign the text in LevelCompletePopup
 
     private string finalTimeFormatted;
 
@@ -40,7 +41,7 @@ public class LevelPopupManager : MonoBehaviour
 
             levelFailPopup.SetActive(true);
             HideBookButton();
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; // Pause time
         }
     }
 
@@ -54,7 +55,7 @@ public class LevelPopupManager : MonoBehaviour
 
             levelCompletePopup.SetActive(true);
             HideBookButton();
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; // Pause time
         }
     }
 
@@ -71,7 +72,7 @@ public class LevelPopupManager : MonoBehaviour
         {
             bookPopup.SetActive(true);
             HideBookButton();
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; // Pause time
         }
     }
 
@@ -81,23 +82,81 @@ public class LevelPopupManager : MonoBehaviour
         {
             bookPopup.SetActive(false);
             ShowBookButton();
-            Time.timeScale = 1f;
+            Time.timeScale = 1f; // Resume time
         }
     }
 
-    public void RestartLevel()
+    public void OnClickRestartSameWord()
     {
-        Debug.Log("Restart button clicked. Restarting level.");
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Restart button clicked. Generating same word.");
+
+        // Reset Player Health and Lives (including the timer)
+        PlayerHealth.Instance.ResetForNewLevel();
+
+        // Reset Creatures
+        CreatureManager.Instance.ResetCreatures();
+
+        Time.timeScale = 1f; // Resume game time
+        WordProgressManager.Instance.RetrySameWord();
     }
 
-    public void StartNextLevel()
+    public void OnClickAdvanceToNextWord()
     {
-        Debug.Log("Next level button clicked.");
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Next level button clicked. Generating next word.");
+
+        // Reset Player Health and Lives (including the timer)
+        PlayerHealth.Instance.ResetForNewLevel();
+
+        // Reset Creatures
+        CreatureManager.Instance.ResetCreatures();
+
+        Time.timeScale = 1f; // Resume game time
+        WordProgressManager.Instance.AdvanceToNextWord();
     }
+
+
+
+    // public void OnClickRestartSameWord() // RestartLevel() old code
+    // {
+    //     Debug.Log("Restart button clicked. Generating same word.");
+
+    //     // Reset Player Health and Lives
+    //     PlayerHealth.Instance.ResetForNewLevel();
+        
+    //     // Reset the Timer
+    //     // Assuming you have a reference to the timer UI that you want to reset to 00:00
+    //     // (If you’re using a script like WordProgressManager to handle the timer, reset there)
+    //     if (WordProgressManager.Instance != null)
+    //     {
+    //         WordProgressManager.Instance.ResetTimer(); // Example, implement if needed
+    //     }
+
+    //     // Reset Creatures
+    //     CreatureManager.Instance.ResetCreatures();
+
+    //     Time.timeScale = 1f; // Resume game time
+    //     WordProgressManager.Instance.RetrySameWord();
+    // }
+
+    // public void OnClickAdvanceToNextWord() // StartNextLevel() old code
+    // {
+    //     Debug.Log("Next level button clicked. Generating next word.");
+
+    //     // Reset Player Health and Lives
+    //     PlayerHealth.Instance.ResetForNewLevel();
+
+    //     // Reset the Timer
+    //     if (WordProgressManager.Instance != null)
+    //     {
+    //         WordProgressManager.Instance.ResetTimer(); // Example, implement if needed
+    //     }
+
+    //     // Reset Creatures
+    //     CreatureManager.Instance.ResetCreatures();
+
+    //     Time.timeScale = 1f; // Resume game time
+    //     WordProgressManager.Instance.AdvanceToNextWord();
+    // }
 
     private void HideBookButton()
     {
@@ -115,83 +174,3 @@ public class LevelPopupManager : MonoBehaviour
         }
     }
 }
-
-
-
-// using UnityEngine;
-
-// public class LevelPopupManager : MonoBehaviour
-// {
-//     public GameObject BookPopup;
-//     public GameObject LevelFailPopup;
-//     public GameObject LevelCompletePopup;
-
-//     public static LevelPopupManager Instance { get; private set; }
-
-//     private void Awake()
-//     {
-//         if (Instance != null && Instance != this)
-//         {
-//             Destroy(gameObject);
-//             return;
-//         }
-
-//         Instance = this;
-//     }
-
-
-//     public void ShowBookPopup()
-//     {
-//         BookPopup.SetActive(true);
-//     }
-
-//     public void HideBookPopup()
-//     {
-//         BookPopup.SetActive(false);
-//     }
-
-//     public void ShowLevelFailPopup()
-//     {
-//         LevelFailPopup.SetActive(true);
-//     }
-
-//     public void ShowLevelCompletePopup()
-//     {
-//         LevelCompletePopup.SetActive(true);
-//     }
-
-//     public void RestartLevel()
-//     {
-//         LevelFailPopup.SetActive(false);
-
-//         // Reset game word/letters
-//         WordProgressManager.Instance.RestartLevel();
-
-//         // Reset player health and position
-//         PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
-//         if (playerHealth != null)
-//         {
-//             playerHealth.FullReset();  // Make sure this resets health/lives and repositions the player
-//         }
-
-//         // Reactivate gameplay (in case it was frozen)
-//         Time.timeScale = 1f;
-//     }
-
-//     public void StartNextLevel()
-//     {
-//         LevelCompletePopup.SetActive(false);
-
-//         // Start new word
-//         WordProgressManager.Instance.StartNewGame();
-
-//         // Reset player health and position
-//         PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
-//         if (playerHealth != null)
-//         {
-//             playerHealth.FullReset();
-//         }
-
-//         Time.timeScale = 1f;
-//     }
-// }
