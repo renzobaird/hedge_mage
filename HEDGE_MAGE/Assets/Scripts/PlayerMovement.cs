@@ -78,26 +78,34 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
+
     void UpdateAnimatorMovement(Vector2 moveInput)
     {
         if (animator != null)
         {
             animator.SetFloat("Horizontal", moveInput.x);
             animator.SetFloat("Vertical", moveInput.y);
-            animator.SetFloat("Speed", moveInput.sqrMagnitude);
+            
+            // Set Speed as the square magnitude of the movement vector
+            float speed = moveInput.sqrMagnitude;
 
-            if (moveInput.sqrMagnitude > 0.01f)
+            animator.SetFloat("Speed", speed);
+
+            // Handle direction for last movement
+            if (speed > 0.01f)
             {
                 animator.SetFloat("LastHorizontal", moveInput.x);
                 animator.SetFloat("LastVertical", moveInput.y);
             }
             else
             {
+                // Use last move direction when idle
                 animator.SetFloat("LastHorizontal", lastMoveDirection.x);
                 animator.SetFloat("LastVertical", lastMoveDirection.y);
             }
         }
     }
+
 
     public void SetMovementEnabled(bool enabled)
     {

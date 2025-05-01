@@ -5,6 +5,7 @@ public class StraightChaser : BaseCreature
     private Vector2 lastValidDirection;
     private float damageCooldown = 1.5f;
     private float lastDamageTime = -Mathf.Infinity;
+    private Animator animator;
 
     // Add a variable to cache the PlayerHealth component
     private PlayerHealth playerHealth;
@@ -12,6 +13,7 @@ public class StraightChaser : BaseCreature
     protected override void Start()
     {
         base.Start();
+        animator = GetComponent<Animator>();
         if (rb == null) rb = GetComponent<Rigidbody2D>();
         if (rb == null) Debug.LogError("StraightChaser: Rigidbody2D not found!");
 
@@ -75,6 +77,21 @@ public class StraightChaser : BaseCreature
         // --- Modification Ends Here ---
 
         // Note: ApplyMovement() call moved to FixedUpdate in the previous step
+
+        if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+        {
+            movement.y = 0;
+        }
+        else
+        {
+            movement.x = 0;
+        }
+
+        if (animator != null)
+        {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+        }
     }
 
     // FixedUpdate remains the same - applies the 'movement' vector calculated in Update
