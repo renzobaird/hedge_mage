@@ -11,12 +11,8 @@ public class LetterObject : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            bool alreadyCollected = WordProgressManager.Instance != null &&
-                                    WordProgressManager.Instance.IsLetterCollected(letter);
-
-            spriteRenderer.sprite = alreadyCollected
-                ? LetterSpriteDatabase.Instance.GetCollectedSprite(letter)
-                : LetterSpriteDatabase.Instance.GetUncollectedSprite(letter);
+            // Use world sprite only (new third set)
+            spriteRenderer.sprite = LetterSpriteDatabase.Instance.GetWorldSprite(letter);
         }
     }
 

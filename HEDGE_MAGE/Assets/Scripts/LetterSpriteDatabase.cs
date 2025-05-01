@@ -11,6 +11,7 @@ public class LetterSpriteDatabase : MonoBehaviour
         public char letter;
         public Sprite uncollectedSprite;
         public Sprite collectedSprite;
+        public Sprite worldSprite;
     }
 
     public List<LetterSpritePair> letterSprites;
@@ -40,6 +41,11 @@ public class LetterSpriteDatabase : MonoBehaviour
                 letterSpriteDict.Add(upper, pair);
             }
         }
+    }
+    public Sprite GetWorldSprite(char c)
+    {
+        c = char.ToUpper(c);
+        return letterSpriteDict.TryGetValue(c, out var pair) ? pair.worldSprite : null;
     }
 
     public Sprite GetCollectedSprite(char c)
