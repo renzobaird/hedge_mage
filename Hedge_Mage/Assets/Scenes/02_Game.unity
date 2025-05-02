@@ -554,6 +554,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82281092}
   m_CullTransparentMesh: 1
+--- !u!1 &107068899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107068900}
+  m_Layer: 8
+  m_Name: SpawnPoint_18
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107068900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107068899}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.93, y: 10.13, z: 0.020388126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1517452154}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136521776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &263878319
 Transform:
   m_ObjectHideFlags: 0
@@ -10716,7 +10747,6 @@ MonoBehaviour:
   bookPopup: {fileID: 654594188}
   levelCompletePopup: {fileID: 1423924495}
   levelFailPopup: {fileID: 871475829}
-  levelStartSpawnPoint: {fileID: 1022381200}
 --- !u!4 &623020542
 Transform:
   m_ObjectHideFlags: 0
@@ -10983,7 +11013,7 @@ Transform:
   m_GameObject: {fileID: 703943365}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.02, y: 2.12, z: 0.020388126}
+  m_LocalPosition: {x: 10.02, y: 4.16, z: 0.020388126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11754,6 +11784,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871475829}
   m_CullTransparentMesh: 1
+--- !u!1 &905693508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905693509}
+  m_Layer: 8
+  m_Name: SpawnPoint_17
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &905693509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905693508}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.93, y: 6.11, z: 0.020388126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1517452154}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &951275038
 GameObject:
   m_ObjectHideFlags: 0
@@ -12132,7 +12193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1073944930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13096,10 +13157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   maxHealth: 100
-  respawnDelay: 3
+  invincibilityDuration: 2
   damageCooldown: 1
-  respawnImmunityTime: 1.5
-  spawnPoint: {fileID: 558213954}
+  spawnPoint: {fileID: 1022381200}
   lifeImage: {fileID: 1782747258}
   life3Sprite: {fileID: 1376514378681762658, guid: 60e2b839653ebf34ea50a7d10adae5a0, type: 3}
   life2Sprite: {fileID: -803626350559589746, guid: 60e2b839653ebf34ea50a7d10adae5a0, type: 3}
@@ -13258,7 +13318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a47ca8dd7b65c4478a8f221333d6f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPrefab: {fileID: 525947945128050764, guid: 5aa8b090a26b0224d93dc74af6c61f01, type: 3}
+  letterPrefab: {fileID: 955731300122735500, guid: 5aa8b090a26b0224d93dc74af6c61f01, type: 3}
   spawnPoints:
   - {fileID: 1517452154}
   - {fileID: 248479179}
@@ -13277,6 +13337,8 @@ MonoBehaviour:
   - {fileID: 1495384218}
   - {fileID: 74772225}
   - {fileID: 1919938996}
+  - {fileID: 905693509}
+  - {fileID: 107068900}
   numberOfDecoys: 5
 --- !u!4 &1342138331
 Transform:
@@ -13478,6 +13540,8 @@ Transform:
   - {fileID: 1495384218}
   - {fileID: 74772225}
   - {fileID: 1919938996}
+  - {fileID: 905693509}
+  - {fileID: 107068900}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1522764510

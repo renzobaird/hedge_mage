@@ -19,14 +19,8 @@ public class LevelPopupManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     public void ShowLevelFailPopup(float finalTime)
@@ -75,6 +69,11 @@ public class LevelPopupManager : MonoBehaviour
     public void OnClickRestartSameWord()
     {
         Debug.Log("Restart button clicked. Generating same word.");
+        
+        // Hide popups
+        if (levelFailPopup != null) levelFailPopup.SetActive(false);
+        if (levelCompletePopup != null) levelCompletePopup.SetActive(false);
+        if (bookPopup != null) bookPopup.SetActive(false);
 
         PlayerHealth.Instance.ResetForNewLevel();
         CreatureManager.Instance.ResetCreatures();
@@ -86,6 +85,11 @@ public class LevelPopupManager : MonoBehaviour
     public void OnClickAdvanceToNextWord()
     {
         Debug.Log("Next level button clicked. Generating next word.");
+        
+        // Hide popups
+        if (levelFailPopup != null) levelFailPopup.SetActive(false);
+        if (levelCompletePopup != null) levelCompletePopup.SetActive(false);
+        if (bookPopup != null) bookPopup.SetActive(false);
 
         PlayerHealth.Instance.ResetForNewLevel();
         CreatureManager.Instance.ResetCreatures();
@@ -94,18 +98,20 @@ public class LevelPopupManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+
     private void HideBookButton()
     {
-        if (buttonBook != null)
-            buttonBook.SetActive(false);
+        if (buttonBook != null) buttonBook.SetActive(false);
     }
 
     private void ShowBookButton()
     {
-        if (buttonBook != null)
-            buttonBook.SetActive(true);
+        if (buttonBook != null) buttonBook.SetActive(true);
     }
 }
+
+
+
 
 
 

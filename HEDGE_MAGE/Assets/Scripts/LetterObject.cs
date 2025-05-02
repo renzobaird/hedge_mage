@@ -2,8 +2,22 @@ using UnityEngine;
 
 public class LetterObject : MonoBehaviour
 {
+    
     public char letter;
     public SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer == null)
+            {
+                Debug.LogError("LetterObject: SpriteRenderer is missing on the GameObject.");
+            }
+        }
+    }
+
 
     public void SetLetter(char c)
     {

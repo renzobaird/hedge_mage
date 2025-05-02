@@ -1,80 +1,97 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
-
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth Instance;
+
+    [Header("Health Settings")]
+    public int maxLives = 3;
     public int maxHealth = 100;
-    public int currentHealth;
-    public int lives = 3;
-
-    public Image[] lifeImage; // UI hearts
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
-
     public float invincibilityDuration = 2f;
     public float damageCooldown = 1f;
+    public Transform spawnPoint;
 
-    private bool isInvincible = false;
+    [Header("UI References")]
+    public Image lifeImage;
+    public Sprite life3Sprite;
+    public Sprite life2Sprite;
+    public Sprite life1Sprite;
+    public TMP_Text healthText;
+    public TMP_Text timerText;
+
+    [Header("Animation")]
+    public Animator animator;
+
+    private int currentLives;
+    private int currentHealth;
     private float lastDamageTime = -10f;
+    private bool isDead = false;
+    public bool IsDead => isDead;
 
-    private Animator animator;
+    private float levelStartTime;
     private PlayerMovement playerMovement;
-    private Vector3 spawnPoint;
-
-    public bool IsDead => currentHealth <= 0 && lives <= 0;
 
     private void Awake()
     {
-        spawnPoint = transform.position;
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+        ResetForNewLevel();
     }
 
-    public void ResetPlayer()
+    void Update()
     {
-        lives = 3;
-        currentHealth = maxHealth;
-        isInvincible = false;
-        lastDamageTime = -10f;
+        if (!isDead && timerText != null)
+        {
+            float elapsedTime = Time.time - levelStartTime;
+            int minutes = Mathf.FloorToInt(elapsedTime / 60F);
+            int seconds = Mathf.FloorToInt(elapsedTime % 60F);
+            timerText.text = $"{minutes:00}:{seconds:00}";
+        }
+    }
 
-        UpdateHearts();
+    public void ResetForNewLevel()
+    {
+        currentLives = maxLives;
+        currentHealth = maxHealth;
+        isDead = false;
+        lastDamageTime = -10f;
+        levelStartTime = Time.time;
+
+        transform.position = spawnPoint != null ? spawnPoint.position : transform.position;
 
         if (animator != null)
-        {
             animator.SetBool("isDead", false);
-        }
 
         if (playerMovement != null)
-        {
             playerMovement.SetMovementEnabled(true);
-        }
 
-        transform.position = spawnPoint;
+        ResetTimer();
+        UpdateUI();
     }
 
     public void TakeDamage(int damage)
     {
-        if (Time.time - lastDamageTime < damageCooldown || isInvincible || IsDead)
-            return;
+        if (Time.time - lastDamageTime < damageCooldown || isDead) return;
 
         currentHealth -= damage;
         lastDamageTime = Time.time;
+        UpdateUI();
 
         if (currentHealth <= 0)
         {
-            lives--;
-
-            if (lives <= 0)
+            currentLives--;
+            if (currentLives <= 0)
             {
                 currentHealth = 0;
-                UpdateHearts();
+                UpdateUI();
                 StartCoroutine(HandlePlayerDeath());
             }
             else
@@ -83,58 +100,73 @@ public class PlayerHealth : MonoBehaviour
                 StartCoroutine(HandleRespawn());
             }
         }
-
-        UpdateHearts();
     }
 
     private IEnumerator HandleRespawn()
     {
-        isInvincible = true;
+        isDead = true;
+        if (animator != null) animator.SetTrigger("Die");
+        if (playerMovement != null) playerMovement.SetMovementEnabled(false);
 
-        if (playerMovement != null)
-            playerMovement.SetMovementEnabled(false);
+        yield return new WaitForSeconds(1f);
 
-        if (animator != null)
-            animator.SetTrigger("Die");
+        transform.position = spawnPoint.position;
+        isDead = false;
 
-        yield return new WaitForSeconds(1f); // death animation
+        if (playerMovement != null) playerMovement.SetMovementEnabled(true);
 
-        transform.position = spawnPoint;
-
-        if (playerMovement != null)
-            playerMovement.SetMovementEnabled(true);
-
-        yield return new WaitForSeconds(invincibilityDuration);
-        isInvincible = false;
+        UpdateUI();
     }
 
     private IEnumerator HandlePlayerDeath()
     {
-        if (playerMovement != null)
-            playerMovement.SetMovementEnabled(false);
+        isDead = true;
+        if (animator != null) animator.SetTrigger("Die");
+        if (playerMovement != null) playerMovement.SetMovementEnabled(false);
 
-        if (animator != null)
-            animator.SetTrigger("Die");
+        yield return new WaitForSeconds(1f);
 
-        yield return new WaitForSeconds(1f); // death animation
-
-        // No automatic restart or scene load here.
-        LevelPopupManager.Instance.ShowLevelFailPopup();
+        float finalTime = Time.time - levelStartTime;
+        LevelPopupManager.Instance?.ShowLevelFailPopup(finalTime);
     }
 
-    public void UpdateHearts()
+    private void UpdateUI()
     {
-        for (int i = 0; i < lifeImage.Length; i++)
+        if (lifeImage != null)
         {
-            lifeImage[i].sprite = i < lives ? fullHeart : emptyHeart;
+            lifeImage.sprite = currentLives switch
+            {
+                3 => life3Sprite,
+                2 => life2Sprite,
+                1 => life1Sprite,
+                _ => null
+            };
+            lifeImage.enabled = currentLives > 0;
+        }
+
+        if (healthText != null)
+        {
+            healthText.text = $"{currentHealth} HP";
         }
     }
 
-    public void SetSpawnPoint(Vector3 point)
+    private void ResetTimer()
     {
-        spawnPoint = point;
+        if (timerText != null)
+        {
+            timerText.text = "00:00";
+        }
+    }
+
+    public float GetElapsedLevelTime()
+    {
+        return Time.time - levelStartTime;
     }
 }
+
+
+
+
 
 
 // using UnityEngine;

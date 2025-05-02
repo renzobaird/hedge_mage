@@ -45,16 +45,18 @@ public class CreatureManager : MonoBehaviour
     // INSERTED CODE 5/1 5PM
     public void ResetCreatures()
     {
-        // Deactivate all current creatures
-        foreach (var creature in spawnedCreatures)
+        // Destroy all existing creatures
+        for (int i = 0; i < spawnedCreatures.Length; i++)
         {
-            if (creature != null)
+            if (spawnedCreatures[i] != null)
             {
-                creature.SetActive(false); // Deactivate creature
+                Destroy(spawnedCreatures[i]);
             }
         }
 
-        // Reset spawn delays and start spawning again
+        // Clear array and restart spawning
+        spawnedCreatures = new GameObject[3];
+        StopAllCoroutines(); // Ensure no overlapping spawns
         StartCoroutine(SpawnCreatures());
     }
 
