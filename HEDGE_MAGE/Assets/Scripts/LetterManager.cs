@@ -81,6 +81,7 @@ public class LetterManager : MonoBehaviour
 
     }
 
+    // INSERTED 5/2
     private void SpawnLetter(char letter)
     {
         if (availableSpots.Count == 0) return;
@@ -88,6 +89,14 @@ public class LetterManager : MonoBehaviour
         int index = Random.Range(0, availableSpots.Count);
         Transform spot = availableSpots[index];
         availableSpots.RemoveAt(index);
+
+        // Check for existing letter at the spot
+        Collider2D hit = Physics2D.OverlapCircle(spot.position, 0.1f, LayerMask.GetMask("Letter"));
+        if (hit != null)
+        {
+            Debug.LogWarning($"Spawn blocked at {spot.position}, already occupied by: {hit.gameObject.name}");
+            return; // Skip this spawn to avoid overlap
+        }
 
         GameObject obj = Instantiate(letterPrefab, spot.position, Quaternion.identity);
         obj.SetActive(true);
@@ -99,6 +108,26 @@ public class LetterManager : MonoBehaviour
             letterObj.SetLetter(letter);
         }
     }
+
+
+    // private void SpawnLetter(char letter)
+    // {
+    //     if (availableSpots.Count == 0) return;
+
+    //     int index = Random.Range(0, availableSpots.Count);
+    //     Transform spot = availableSpots[index];
+    //     availableSpots.RemoveAt(index);
+
+    //     GameObject obj = Instantiate(letterPrefab, spot.position, Quaternion.identity);
+    //     obj.SetActive(true);
+    //     spawnedLetters.Add(obj);
+
+    //     LetterObject letterObj = obj.GetComponent<LetterObject>();
+    //     if (letterObj != null)
+    //     {
+    //         letterObj.SetLetter(letter);
+    //     }
+    // }
 }
 
 
