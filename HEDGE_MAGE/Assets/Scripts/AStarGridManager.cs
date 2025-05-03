@@ -156,16 +156,18 @@ public class AStarGridManager : MonoBehaviour
     }
     void OnDrawGizmos()
     {
+        Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
-        
+
         if (grid != null)
         {
-            foreach (Node n in grid)
+            foreach (var node in grid)
             {
-                Gizmos.color = n.walkable ? Color.white : Color.red;
-                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+                Gizmos.color = node.walkable ? Color.white : Color.red;
+                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeRadius * 1.5f));
             }
         }
     }
+
 
 }
