@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HedgeMageHomeScreennobutton_GraceKimball_0: -8072527291846327413
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
