@@ -23,15 +23,17 @@ public class AStarGridManager : MonoBehaviour
     {
         grid = new Node[gridSizeX, gridSizeY];
         Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2
-                                                  - Vector3.up * gridWorldSize.y / 2;
+                                                    - Vector3.up * gridWorldSize.y / 2;
 
         for (int x = 0; x < gridSizeX; x++)
         {
             for (int y = 0; y < gridSizeY; y++)
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius)
-                                                    + Vector3.up * (y * nodeDiameter + nodeRadius);
+                                                        + Vector3.up * (y * nodeDiameter + nodeRadius);
                 bool walkable = !Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask);
+                Debug.DrawRay(worldPoint, Vector3.up * 0.2f, walkable ? Color.green : Color.red, 5f);
+
                 grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
         }
@@ -154,6 +156,7 @@ public class AStarGridManager : MonoBehaviour
             this.gridY = y;
         }
     }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -168,6 +171,4 @@ public class AStarGridManager : MonoBehaviour
             }
         }
     }
-
-
 }
