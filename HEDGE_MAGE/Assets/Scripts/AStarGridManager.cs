@@ -21,9 +21,14 @@ public class AStarGridManager : MonoBehaviour
 
     void CreateGrid()
     {
+        Physics2D.SyncTransforms(); // Unity 6 physics update
+
         grid = new Node[gridSizeX, gridSizeY];
         Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2
                                                     - Vector3.up * gridWorldSize.y / 2;
+
+        int walkableCount = 0;
+        int blockedCount = 0;
 
         for (int x = 0; x < gridSizeX; x++)
         {
@@ -31,12 +36,28 @@ public class AStarGridManager : MonoBehaviour
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius)
                                                         + Vector3.up * (y * nodeDiameter + nodeRadius);
-                bool walkable = !Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask);
-                Debug.DrawRay(worldPoint, Vector3.up * 0.2f, walkable ? Color.green : Color.red, 5f);
 
+                Collider2D hit = Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask);
+                bool walkable = (hit == null);
+
+                if (!walkable)
+                {
+                    Debug.Log($"❌ BLOCKED at {worldPoint}. Hit: {hit.name}, Layer: {hit.gameObject.layer}");
+                }
+
+
+                else
+                {
+                    walkableCount++;
+                }
+
+                Debug.DrawRay(worldPoint, Vector3.up * 0.2f, walkable ? Color.green : Color.red, 5f);
                 grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
         }
+
+        int total = gridSizeX * gridSizeY;
+        Debug.Log($"[Grid Summary] Total Nodes: {total}, Walkable: {walkableCount}, Blocked: {blockedCount}");
     }
 
     public List<Vector3> FindPath(Vector3 startPos, Vector3 targetPos)
@@ -164,10 +185,18 @@ public class AStarGridManager : MonoBehaviour
 
         if (grid != null)
         {
-            foreach (var node in grid)
+            for (int x = 0; x < gridSizeX; x++)
             {
-                Gizmos.color = node.walkable ? Color.white : Color.red;
-                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeRadius * 1.5f));
+                for (int y = 0; y < gridSizeY; y++)
+                {
+                    Node node = grid[x, y];
+                    Gizmos.color = node.walkable ? Color.white : Color.red;
+                    Gizmos.DrawWireCube(node.worldPosition, Vector3.one * (nodeRadius * 2f));
+
+#if UNITY_EDITOR
+                    UnityEditor.Handles.Label(node.worldPosition + Vector3.up * 0.1f, node.walkable ? "W" : "X");
+#endif
+                }
             }
         }
     }
