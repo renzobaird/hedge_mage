@@ -16,7 +16,11 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
 Logs/AssetImportWorker5.log
 -srvPort
 <<<<<<< HEAD
+<<<<<<< HEAD
 51760
+=======
+53570
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 53570
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -64,12 +68,21 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
 <<<<<<< HEAD
+<<<<<<< HEAD
 Player connection [36352]  Target information:
 
 Player connection [36352]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 2341107092 [EditorId] 2341107092 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
 Player connection [36352] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [36352] Host joined alternative multi-casting on [225.0.0.222:34997]...
+=======
+Player connection [4180]  Target information:
+
+Player connection [4180]  * "[IP] 192.168.68.77 [Port] 0 [Flags] 2 [Guid] 2133554113 [EditorId] 2133554113 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [4180] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [4180] Host joined alternative multi-casting on [225.0.0.222:34997]...
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Player connection [4180]  Target information:
 
@@ -90,7 +103,11 @@ Library Redirect Path: Library/
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
 <<<<<<< HEAD
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 6.00 ms, found 4 plugins.
+=======
+Refreshing native plugins compatible for Editor in 4.01 ms, found 4 plugins.
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Refreshing native plugins compatible for Editor in 4.01 ms, found 4 plugins.
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -110,7 +127,11 @@ Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Manage
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
 <<<<<<< HEAD
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -118,6 +139,7 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+<<<<<<< HEAD
 <<<<<<< HEAD
 Registered in 0.005673 seconds.
 - Loaded All Assemblies, in  0.352 seconds
@@ -137,11 +159,22 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 638ms
 	BeginReloadAssembly (122ms)
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+Registered in 0.006849 seconds.
+- Loaded All Assemblies, in  0.349 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.293 seconds
+Domain Reload Profiling: 638ms
+	BeginReloadAssembly (122ms)
+>>>>>>> parent of 336c0b1 (uploaded)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (9ms)
@@ -181,11 +214,32 @@ Domain Reload Profiling: 638ms
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (259ms)
 			LogAssemblyErrors (0ms)
+=======
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (136ms)
+		LoadAssemblies (118ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (133ms)
+			TypeCache.Refresh (132ms)
+				TypeCache.ScanAssembly (120ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (293ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (259ms)
+			LogAssemblyErrors (0ms)
+>>>>>>> parent of 336c0b1 (uploaded)
 			InitializePlatformSupportModulesInManaged (25ms)
 			SetLoadedEditorAssemblies (4ms)
 			BeforeProcessingInitializeOnLoad (42ms)
 			ProcessInitializeOnLoadAttributes (143ms)
 			ProcessInitializeOnLoadMethodAttributes (45ms)
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
@@ -195,6 +249,7 @@ Domain Reload Profiling: 638ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 <<<<<<< HEAD
 - Loaded All Assemblies, in  0.822 seconds
 Refreshing native plugins compatible for Editor in 2.14 ms, found 4 plugins.
@@ -214,11 +269,22 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 1417ms
 	BeginReloadAssembly (146ms)
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+- Loaded All Assemblies, in  0.747 seconds
+Refreshing native plugins compatible for Editor in 1.96 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.679 seconds
+Domain Reload Profiling: 1417ms
+	BeginReloadAssembly (146ms)
+>>>>>>> parent of 336c0b1 (uploaded)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (22ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	RebuildCommonClasses (33ms)
 	RebuildNativeTypeToScriptingClass (11ms)
@@ -257,6 +323,22 @@ Domain Reload Profiling: 1417ms
 	FinalizeReload (679ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
+=======
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (517ms)
+		LoadAssemblies (396ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (214ms)
+			TypeCache.Refresh (158ms)
+				TypeCache.ScanAssembly (143ms)
+			BuildScriptInfoCaches (45ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (679ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+>>>>>>> parent of 336c0b1 (uploaded)
 		SetupLoadedEditorAssemblies (560ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
@@ -265,11 +347,15 @@ Domain Reload Profiling: 1417ms
 			ProcessInitializeOnLoadAttributes (323ms)
 			ProcessInitializeOnLoadMethodAttributes (96ms)
 			AfterProcessingInitializeOnLoad (9ms)
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+<<<<<<< HEAD
 <<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 1.93 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -280,6 +366,10 @@ Total: 7.403500 ms (FindLiveObjects: 0.491600 ms CreateObjectMapping: 0.330000 m
 =======
 Refreshing native plugins compatible for Editor in 1.70 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+=======
+Refreshing native plugins compatible for Editor in 1.70 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+>>>>>>> parent of 336c0b1 (uploaded)
 Unloading 221 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 6606 unused Assets / (4.2 MB). Loaded Objects now: 7339.
 Memory consumption went from 195.3 MB to 191.2 MB.
@@ -509,6 +599,9 @@ Received Import Request.
   artifactKey: Guid(d760ac71d76c0c541a18cb67f217b8d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Assets/Sprites/Tiles & Shapes/final2_16.asset using Guid(d760ac71d76c0c541a18cb67f217b8d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd6101d91ee575113d3f26abbaa64163') in 0.0077899 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout

@@ -100,6 +100,9 @@ MonoBehaviour:
 =======
     width: 250
     height: 536
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
@@ -125,9 +128,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 561
     width: 1476
     height: 372
+=======
+    y: 536
+    width: 1488
+    height: 397
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
     y: 536
     width: 1488
@@ -263,6 +272,9 @@ MonoBehaviour:
 =======
     width: 1488
     height: 536
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
@@ -292,6 +304,9 @@ MonoBehaviour:
 =======
     width: 1238
     height: 536
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
@@ -461,9 +476,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 640
     width: 1475
     height: 346
+=======
+    y: 615
+    width: 1487
+    height: 371
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
     y: 615
     width: 1487
@@ -509,9 +530,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: fab50000
     m_LastClickedID: 46586
     m_ExpandedIDs: 0000000080b5000082b5000084b5000086b5000088b500008ab5000000ca9a3b
+=======
+    m_SelectedIDs: 60b60000
+    m_LastClickedID: 46688
+    m_ExpandedIDs: 00000000e6b50000e8b50000eab50000ecb50000eeb50000f0b5000000ca9a3b
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
     m_SelectedIDs: 60b60000
     m_LastClickedID: 46688
@@ -546,7 +573,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000080b5000082b5000084b5000086b5000088b500008ab50000
+=======
+    m_ExpandedIDs: 00000000e6b50000e8b50000eab50000ecb50000eeb50000f0b50000
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
     m_ExpandedIDs: 00000000e6b50000e8b50000eab50000ecb50000eeb50000f0b50000
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -579,7 +610,11 @@ MonoBehaviour:
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c62300000eb8000046cb0000d4d9000014b8000010b8000018b8000082b300001caf000022b700005eb6000056b800000000000004b60000b48a0100b4b50000d2b50000
+=======
+    m_ExpandedInstanceIDs: c62300000eb8000046cb0000d4d9000014b8000010b8000018b8000082b30000
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
     m_ExpandedInstanceIDs: c62300000eb8000046cb0000d4d9000014b8000010b8000018b8000082b30000
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -689,6 +724,9 @@ MonoBehaviour:
 =======
     width: 249
     height: 510
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -705,9 +743,15 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: 12b10000
       m_LastClickedID: 45330
       m_ExpandedIDs: 0efbfffff6b0000066b10000
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 945ffffffe6affff7a87ffffc0a2ffff42e3ffffc6e3ffff20ecffffe6ecffffc2eeffff94efffffd6f4ffff0efbffff38bb000020be000072c10000aec100007ec50000b2c50000dcc5000002c6000024c6000064c600008ede0000
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
       m_SelectedIDs: 
       m_LastClickedID: 0
@@ -766,6 +810,9 @@ MonoBehaviour:
 =======
     width: 1236
     height: 510
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1308,9 +1355,15 @@ MonoBehaviour:
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.6664372, y: 0.69547534, z: 0.19766425}
     speed: 2
     m_Value: {x: 0.6664372, y: 0.69547534, z: 0.19766425}
+=======
+    m_Target: {x: 464.26834, y: 209.06168, z: -0.06685065}
+    speed: 2
+    m_Value: {x: 464.0352, y: 208.99715, z: -0.07188824}
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
     m_Target: {x: 464.26834, y: 209.06168, z: -0.06685065}
     speed: 2
@@ -1366,9 +1419,15 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 1.569137
     speed: 2
     m_Value: 1.569137
+=======
+    m_Target: 10.690845
+    speed: 2
+    m_Value: 11.194602
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
     m_Target: 10.690845
     speed: 2
@@ -1433,6 +1492,9 @@ MonoBehaviour:
 =======
     width: 1236
     height: 712
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1452,7 +1514,11 @@ MonoBehaviour:
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_TargetSize: {x: 1192, y: 514}
+=======
+  m_TargetSize: {x: 1236, y: 691}
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
   m_TargetSize: {x: 1236, y: 691}
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -1480,6 +1546,9 @@ MonoBehaviour:
     m_HBaseRangeMax: 618
     m_VBaseRangeMin: -345.5
     m_VBaseRangeMax: 345.5
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
@@ -1499,10 +1568,17 @@ MonoBehaviour:
       x: 0
       y: 21
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 1192
       height: 514
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 596, y: 257}
+=======
+      width: 1236
+      height: 691
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 618, y: 345.5}
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
       width: 1236
       height: 691
@@ -1516,6 +1592,7 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
       x: -596
       y: -257
       width: 1192
@@ -1523,6 +1600,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1192, y: 535}
+=======
+      x: -618
+      y: -345.5
+      width: 1236
+      height: 691
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1236, y: 712}
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
       x: -618
       y: -345.5

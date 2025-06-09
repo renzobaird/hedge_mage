@@ -16,7 +16,11 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
 Logs/AssetImportWorker9.log
 -srvPort
 <<<<<<< HEAD
+<<<<<<< HEAD
 51760
+=======
+53570
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 53570
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -64,6 +68,7 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
 <<<<<<< HEAD
+<<<<<<< HEAD
 Player connection [32580]  Target information:
 
 Player connection [32580]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 2543023047 [EditorId] 2543023047 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
@@ -71,12 +76,17 @@ Player connection [32580]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 254302
 Player connection [32580] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [32580] Host joined alternative multi-casting on [225.0.0.222:34997]...
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 Player connection [18888]  Target information:
 
 Player connection [18888]  * "[IP] 192.168.68.77 [Port] 0 [Flags] 2 [Guid] 4144760846 [EditorId] 4144760846 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
 Player connection [18888] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [18888] Host joined alternative multi-casting on [225.0.0.222:34997]...
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
@@ -90,7 +100,11 @@ Library Redirect Path: Library/
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
 <<<<<<< HEAD
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 3.24 ms, found 4 plugins.
+=======
+Refreshing native plugins compatible for Editor in 6.64 ms, found 4 plugins.
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Refreshing native plugins compatible for Editor in 6.64 ms, found 4 plugins.
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -110,7 +124,11 @@ Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Manage
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
 <<<<<<< HEAD
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -118,6 +136,7 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+<<<<<<< HEAD
 <<<<<<< HEAD
 Registered in 0.004380 seconds.
 - Loaded All Assemblies, in  0.354 seconds
@@ -128,6 +147,8 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 658ms
 	BeginReloadAssembly (138ms)
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 Registered in 0.011834 seconds.
 - Loaded All Assemblies, in  0.565 seconds
 Native extension for WindowsStandalone target not found
@@ -136,12 +157,16 @@ Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.337 seconds
 Domain Reload Profiling: 897ms
 	BeginReloadAssembly (193ms)
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	RebuildCommonClasses (29ms)
 	RebuildNativeTypeToScriptingClass (9ms)
@@ -165,6 +190,8 @@ Domain Reload Profiling: 897ms
 			ProcessInitializeOnLoadAttributes (153ms)
 			ProcessInitializeOnLoadMethodAttributes (46ms)
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 	RebuildCommonClasses (49ms)
 	RebuildNativeTypeToScriptingClass (15ms)
 	initialDomainReloadingComplete (71ms)
@@ -186,6 +213,9 @@ Domain Reload Profiling: 897ms
 			BeforeProcessingInitializeOnLoad (61ms)
 			ProcessInitializeOnLoadAttributes (154ms)
 			ProcessInitializeOnLoadMethodAttributes (45ms)
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
@@ -195,6 +225,7 @@ Domain Reload Profiling: 897ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 <<<<<<< HEAD
 - Loaded All Assemblies, in  0.752 seconds
 Refreshing native plugins compatible for Editor in 2.28 ms, found 4 plugins.
@@ -243,6 +274,8 @@ Memory consumption went from 198.9 MB to 194.4 MB.
 Total: 6.519700 ms (FindLiveObjects: 0.757200 ms CreateObjectMapping: 0.320400 ms MarkObjects: 3.717400 ms  DeleteObjects: 1.723700 ms)
 
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 - Loaded All Assemblies, in  0.979 seconds
 Refreshing native plugins compatible for Editor in 6.11 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
@@ -669,6 +702,9 @@ Memory consumption went from 172.4 MB to 168.6 MB.
 Total: 7.213300 ms (FindLiveObjects: 0.499500 ms CreateObjectMapping: 0.427000 ms MarkObjects: 4.426700 ms  DeleteObjects: 1.859000 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
