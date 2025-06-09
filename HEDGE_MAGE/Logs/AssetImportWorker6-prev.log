@@ -19,7 +19,11 @@ Logs/AssetImportWorker6.log
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 51760
+=======
+53570
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 53570
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -79,12 +83,21 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Player connection [3024]  Target information:
 
 Player connection [3024]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 1643226087 [EditorId] 1643226087 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
 Player connection [3024] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [3024] Host joined alternative multi-casting on [225.0.0.222:34997]...
+=======
+Player connection [27128]  Target information:
+
+Player connection [27128]  * "[IP] 192.168.68.77 [Port] 0 [Flags] 2 [Guid] 2597805355 [EditorId] 2597805355 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [27128] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [27128] Host joined alternative multi-casting on [225.0.0.222:34997]...
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Player connection [27128]  Target information:
 
@@ -132,7 +145,11 @@ Library Redirect Path: Library/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 4.90 ms, found 4 plugins.
+=======
+Refreshing native plugins compatible for Editor in 6.97 ms, found 4 plugins.
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Refreshing native plugins compatible for Editor in 6.97 ms, found 4 plugins.
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -164,7 +181,11 @@ Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Mo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56180
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56864
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56864
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -181,6 +202,7 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -233,11 +255,22 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 634ms
 	BeginReloadAssembly (123ms)
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+Registered in 0.005993 seconds.
+- Loaded All Assemblies, in  0.343 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.295 seconds
+Domain Reload Profiling: 634ms
+	BeginReloadAssembly (123ms)
+>>>>>>> parent of 336c0b1 (uploaded)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -355,6 +388,29 @@ Domain Reload Profiling: 634ms
 			ProcessInitializeOnLoadAttributes (143ms)
 			ProcessInitializeOnLoadMethodAttributes (47ms)
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (130ms)
+		LoadAssemblies (119ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (127ms)
+			TypeCache.Refresh (126ms)
+				TypeCache.ScanAssembly (114ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (295ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (260ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (42ms)
+			ProcessInitializeOnLoadAttributes (143ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
+>>>>>>> parent of 336c0b1 (uploaded)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -363,6 +419,7 @@ Domain Reload Profiling: 634ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -415,10 +472,21 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 1400ms
 	BeginReloadAssembly (149ms)
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+- Loaded All Assemblies, in  0.750 seconds
+Refreshing native plugins compatible for Editor in 1.98 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.659 seconds
+Domain Reload Profiling: 1400ms
+	BeginReloadAssembly (149ms)
+>>>>>>> parent of 336c0b1 (uploaded)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -653,6 +721,52 @@ Number of updated asset objects reloaded before import = 0Number of asset object
 ========================================================================
 Received Import Request.
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (517ms)
+		LoadAssemblies (390ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (220ms)
+			TypeCache.Refresh (161ms)
+				TypeCache.ScanAssembly (147ms)
+			BuildScriptInfoCaches (47ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (659ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (544ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (114ms)
+			ProcessInitializeOnLoadAttributes (332ms)
+			ProcessInitializeOnLoadMethodAttributes (83ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 2.20 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 221 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6606 unused Assets / (4.2 MB). Loaded Objects now: 7339.
+Memory consumption went from 199.1 MB to 194.9 MB.
+Total: 5.899300 ms (FindLiveObjects: 0.472600 ms CreateObjectMapping: 0.309900 ms MarkObjects: 3.636200 ms  DeleteObjects: 1.479400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2108273.515425 seconds.
+  path: Assets/Assets/Sprites/Tiles & Shapes/2d update_0.asset
+  artifactKey: Guid(bee5888aea542b4468bf3b3b1463a929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Sprites/Tiles & Shapes/2d update_0.asset using Guid(bee5888aea542b4468bf3b3b1463a929) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c524e7012e0130429f5d77e69921a04b') in 0.0765555 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+>>>>>>> parent of 336c0b1 (uploaded)
   Time since last request: 0.000021 seconds.
   path: Assets/Assets/Sprites/Tiles & Shapes/2d update_18.asset
   artifactKey: Guid(e644a19b118d013499f1b5384eb47353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -660,6 +774,9 @@ Start importing Assets/Assets/Sprites/Tiles & Shapes/2d update_18.asset using Gu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -671,6 +788,7 @@ Number of updated asset objects reloaded before import = 0Number of asset object
 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -686,6 +804,8 @@ Start importing Assets/Assets/Sprites/Tiles & Shapes/Hedge_Tileset_V6_3.asset us
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
   Time since last request: 0.000024 seconds.
   path: Assets/Assets/Sprites/Tiles & Shapes/2d update_13.asset
   artifactKey: Guid(a36c7a498f6e1234bbb12e863925fcf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -693,6 +813,9 @@ Start importing Assets/Assets/Sprites/Tiles & Shapes/2d update_13.asset using Gu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -708,6 +831,7 @@ Received Import Request.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Time since last request: 0.000015 seconds.
   path: Assets/Assets/Sprites/Tiles & Shapes/Path_V1.prefab
   artifactKey: Guid(187e779b6e8443a459876d889acda162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -715,6 +839,8 @@ Start importing Assets/Assets/Sprites/Tiles & Shapes/Path_V1.prefab using Guid(1
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 41
 
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -795,6 +921,9 @@ Prepare: number of updated asset objects reloaded= 0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)

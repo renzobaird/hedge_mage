@@ -19,7 +19,11 @@ Logs/AssetImportWorker10.log
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 51760
+=======
+53570
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 53570
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -79,6 +83,7 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Player connection [29872]  Target information:
 
 Player connection [29872]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 1094183016 [EditorId] 1094183016 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
@@ -86,6 +91,8 @@ Player connection [29872]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 109418
 Player connection [29872] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [29872] Host joined alternative multi-casting on [225.0.0.222:34997]...
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -101,6 +108,9 @@ Player connection [21476] Host joined alternative multi-casting on [225.0.0.222:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -123,7 +133,11 @@ Library Redirect Path: Library/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 3.28 ms, found 4 plugins.
+=======
+Refreshing native plugins compatible for Editor in 4.83 ms, found 4 plugins.
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Refreshing native plugins compatible for Editor in 4.83 ms, found 4 plugins.
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -155,7 +169,11 @@ Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Mo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56876
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -176,6 +194,7 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Registered in 0.004631 seconds.
 - Loaded All Assemblies, in  0.339 seconds
 Native extension for WindowsStandalone target not found
@@ -185,6 +204,8 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 640ms
 	BeginReloadAssembly (120ms)
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -202,6 +223,9 @@ Domain Reload Profiling: 841ms
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -214,6 +238,7 @@ Domain Reload Profiling: 841ms
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -246,6 +271,8 @@ Domain Reload Profiling: 841ms
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 	RebuildCommonClasses (39ms)
 	RebuildNativeTypeToScriptingClass (18ms)
 	initialDomainReloadingComplete (65ms)
@@ -270,6 +297,9 @@ Domain Reload Profiling: 841ms
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -289,6 +319,7 @@ Begin MonoManager ReloadAssembly
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Loaded All Assemblies, in  0.766 seconds
 Refreshing native plugins compatible for Editor in 1.71 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
@@ -298,6 +329,8 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 1410ms
 	BeginReloadAssembly (130ms)
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -315,6 +348,9 @@ Domain Reload Profiling: 1733ms
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -326,6 +362,7 @@ Domain Reload Profiling: 1733ms
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -365,6 +402,8 @@ Memory consumption went from 198.8 MB to 194.1 MB.
 Total: 5.231500 ms (FindLiveObjects: 0.388000 ms CreateObjectMapping: 0.258600 ms MarkObjects: 3.137700 ms  DeleteObjects: 1.446300 ms)
 
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -411,6 +450,10 @@ Process exiting
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+Exiting without the bug reporter. Application will terminate with return code 0
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 Exiting without the bug reporter. Application will terminate with return code 0
 >>>>>>> parent of 336c0b1 (uploaded)
 =======

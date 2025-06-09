@@ -19,7 +19,11 @@ Logs/AssetImportWorker9.log
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 51760
+=======
+53570
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 53570
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -79,6 +83,7 @@ C:/Unity Projects/HEDGE_MAGE/HEDGE_MAGE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Player connection [32580]  Target information:
 
 Player connection [32580]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 2543023047 [EditorId] 2543023047 [Version] 1048832 [Id] WindowsEditor(7,Renzo) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
@@ -86,6 +91,8 @@ Player connection [32580]  * "[IP] 10.0.188.159 [Port] 0 [Flags] 2 [Guid] 254302
 Player connection [32580] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [32580] Host joined alternative multi-casting on [225.0.0.222:34997]...
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -101,6 +108,9 @@ Player connection [18888] Host joined alternative multi-casting on [225.0.0.222:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -123,7 +133,11 @@ Library Redirect Path: Library/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 3.24 ms, found 4 plugins.
+=======
+Refreshing native plugins compatible for Editor in 6.64 ms, found 4 plugins.
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Refreshing native plugins compatible for Editor in 6.64 ms, found 4 plugins.
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -155,7 +169,11 @@ Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Mo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -176,6 +194,7 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Registered in 0.004380 seconds.
 - Loaded All Assemblies, in  0.354 seconds
 Native extension for WindowsStandalone target not found
@@ -185,6 +204,8 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 658ms
 	BeginReloadAssembly (138ms)
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -202,6 +223,9 @@ Domain Reload Profiling: 897ms
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -214,6 +238,7 @@ Domain Reload Profiling: 897ms
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -246,6 +271,8 @@ Domain Reload Profiling: 897ms
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 	RebuildCommonClasses (49ms)
 	RebuildNativeTypeToScriptingClass (15ms)
 	initialDomainReloadingComplete (71ms)
@@ -270,6 +297,9 @@ Domain Reload Profiling: 897ms
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
@@ -285,6 +315,7 @@ Domain Reload Profiling: 897ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -336,6 +367,8 @@ Memory consumption went from 198.9 MB to 194.4 MB.
 Total: 6.519700 ms (FindLiveObjects: 0.757200 ms CreateObjectMapping: 0.320400 ms MarkObjects: 3.717400 ms  DeleteObjects: 1.723700 ms)
 
 =======
+=======
+>>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
@@ -771,6 +804,9 @@ Prepare: number of updated asset objects reloaded= 0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 336c0b1 (uploaded)
+=======
 >>>>>>> parent of 336c0b1 (uploaded)
 =======
 >>>>>>> parent of 336c0b1 (uploaded)
