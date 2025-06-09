@@ -94,8 +94,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 282
     height: 561
+=======
+    width: 250
+    height: 536
+>>>>>>> parent of 336c0b1 (uploaded)
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 16}
@@ -119,9 +124,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 561
     width: 1476
     height: 372
+=======
+    y: 536
+    width: 1488
+    height: 397
+>>>>>>> parent of 336c0b1 (uploaded)
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
   m_ActualView: {fileID: 14}
@@ -246,8 +257,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1476
     height: 561
+=======
+    width: 1488
+    height: 536
+>>>>>>> parent of 336c0b1 (uploaded)
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
@@ -270,8 +286,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 282
     y: 0
+<<<<<<< HEAD
     width: 1194
     height: 561
+=======
+    width: 1238
+    height: 536
+>>>>>>> parent of 336c0b1 (uploaded)
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 17}
@@ -439,9 +460,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 640
     width: 1475
     height: 346
+=======
+    y: 615
+    width: 1487
+    height: 371
+>>>>>>> parent of 336c0b1 (uploaded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -481,9 +508,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: fab50000
     m_LastClickedID: 46586
     m_ExpandedIDs: 0000000080b5000082b5000084b5000086b5000088b500008ab5000000ca9a3b
+=======
+    m_SelectedIDs: 60b60000
+    m_LastClickedID: 46688
+    m_ExpandedIDs: 00000000e6b50000e8b50000eab50000ecb50000eeb50000f0b5000000ca9a3b
+>>>>>>> parent of 336c0b1 (uploaded)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -512,7 +545,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000080b5000082b5000084b5000086b5000088b500008ab50000
+=======
+    m_ExpandedIDs: 00000000e6b50000e8b50000eab50000ecb50000eeb50000f0b50000
+>>>>>>> parent of 336c0b1 (uploaded)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,7 +578,11 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c62300000eb8000046cb0000d4d9000014b8000010b8000018b8000082b300001caf000022b700005eb6000056b800000000000004b60000b48a0100b4b50000d2b50000
+=======
+    m_ExpandedInstanceIDs: c62300000eb8000046cb0000d4d9000014b8000010b8000018b8000082b30000
+>>>>>>> parent of 336c0b1 (uploaded)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,8 +683,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 79
+<<<<<<< HEAD
     width: 281
     height: 535
+=======
+    width: 249
+    height: 510
+>>>>>>> parent of 336c0b1 (uploaded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -658,9 +704,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 12b10000
       m_LastClickedID: 45330
       m_ExpandedIDs: 0efbfffff6b0000066b10000
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 945ffffffe6affff7a87ffffc0a2ffff42e3ffffc6e3ffff20ecffffe6ecffffc2eeffff94efffffd6f4ffff0efbffff38bb000020be000072c10000aec100007ec50000b2c50000dcc5000002c6000024c6000064c600008ede0000
+>>>>>>> parent of 336c0b1 (uploaded)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -708,8 +760,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 282
     y: 79
+<<<<<<< HEAD
     width: 1192
     height: 535
+=======
+    width: 1236
+    height: 510
+>>>>>>> parent of 336c0b1 (uploaded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1250,9 +1307,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 0.6664372, y: 0.69547534, z: 0.19766425}
     speed: 2
     m_Value: {x: 0.6664372, y: 0.69547534, z: 0.19766425}
+=======
+    m_Target: {x: 464.26834, y: 209.06168, z: -0.06685065}
+    speed: 2
+    m_Value: {x: 464.0352, y: 208.99715, z: -0.07188824}
+>>>>>>> parent of 336c0b1 (uploaded)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1302,9 +1365,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 1.569137
     speed: 2
     m_Value: 1.569137
+=======
+    m_Target: 10.690845
+    speed: 2
+    m_Value: 11.194602
+>>>>>>> parent of 336c0b1 (uploaded)
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1358,8 +1427,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 282
     y: 79
+<<<<<<< HEAD
     width: 1192
     height: 535
+=======
+    width: 1236
+    height: 712
+>>>>>>> parent of 336c0b1 (uploaded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1377,7 +1451,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 1192, y: 514}
+=======
+  m_TargetSize: {x: 1236, y: 691}
+>>>>>>> parent of 336c0b1 (uploaded)
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1392,10 +1470,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -596
     m_HBaseRangeMax: 596
     m_VBaseRangeMin: -257
     m_VBaseRangeMax: 257
+=======
+    m_HBaseRangeMin: -618
+    m_HBaseRangeMax: 618
+    m_VBaseRangeMin: -345.5
+    m_VBaseRangeMax: 345.5
+>>>>>>> parent of 336c0b1 (uploaded)
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1413,16 +1498,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 1192
       height: 514
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 596, y: 257}
+=======
+      width: 1236
+      height: 691
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 618, y: 345.5}
+>>>>>>> parent of 336c0b1 (uploaded)
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -596
       y: -257
       width: 1192
@@ -1430,6 +1523,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1192, y: 535}
+=======
+      x: -618
+      y: -345.5
+      width: 1236
+      height: 691
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1236, y: 712}
+>>>>>>> parent of 336c0b1 (uploaded)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
